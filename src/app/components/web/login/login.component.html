@@ -1,0 +1,62 @@
+<div>
+    <div>
+        <div>
+            <form #AliasForm='ngForm'>
+
+                <span>
+                    Login
+                </span>
+
+                <!-- <span class="text-danger">El correo es obligatorio</span> -->
+                <div >
+                    <!-- Cuando se usa NgModel se debe de  importar   Forms Module 
+                    en src/app/app.module.ts
+                import { FormsModule } from '@angular/forms';
+            y agregar a 
+          imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ]-->
+                    <input type="text" name="email" required email placeholder="Email"
+                        [(ngModel)]="user.email">
+                </div>
+
+                <!-- <span class="text-danger">La contraseña debe de ser más de 6 letras</span> -->
+                <div data-validate="Password is required">
+                    <input type="password"  name="pass" placeholder="Password"
+                        [(ngModel)]="user.password">
+                </div>
+
+                <div>
+                    <div>
+                        <input id="ckb1" type="checkbox" name="remember-me">
+                        <label for="ckb1">
+                            Recordar mi usuario
+                        </label>
+                    </div>
+
+                    <div>
+                        <a routerLink="/registro">
+                            ¿No tienes cuenta?
+                        </a>
+                    </div>
+                    <div>
+                        <a routerLink="/forgotpassword">
+                            ¿Has Olvidado Tu Contraseña?
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- En este punto debido a que angular evita que se recargue la pagina -->
+
+                    <button (click)="sumar(AliasForm)">
+                        Ingresar
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

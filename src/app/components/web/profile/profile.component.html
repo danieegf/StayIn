@@ -1,0 +1,82 @@
+<div class="form-signin">
+  <h5 class="texto">Mi Perfil</h5>
+  <img
+    src="https://image.shutterstock.com/image-vector/profile-picture-vector-260nw-404138239.jpg"
+    alt="Avatar"
+    style="width: 200px"
+  />
+</div>
+<div class="form-signin">
+  <div data-validate="Name is required">
+    <label for="name" class="texto">Nombre</label>
+    <input type="text" name="name" placeholder="Nombre" class="form-control" />
+  </div>
+  <div data-validate="Second Name is required">
+    <label for="second_name" class="texto">Segundo Nombre</label>
+    <input
+      type="text"
+      name="second_name"
+      placeholder="Segundo Nombre"
+      class="form-control"
+    />
+  </div>
+  <div data-validate="Last Name is required">
+    <label for="last_name" class="texto">Apellido Paterno</label>
+    <input
+      type="text"
+      name="last_name"
+      placeholder="Apellido"
+      class="form-control"
+    />
+  </div>
+  <div data-validate="Second Last Name is required">
+    <label for="second_last_name" class="texto">Apellido Materno</label>
+    <input
+      type="text"
+      name="second_last_name"
+      placeholder="Segundo Apellido"
+      class="form-control"
+    />
+  </div>
+  <div data-validate="Mail is required">
+    <label for="email" class="texto">Email</label>
+
+    <input type="text" name="mail" placeholder="Correo" class="form-control" />
+  </div>
+  <div>
+    <label class="texto" for="start texto">Fecha de Nacimiento:</label>
+    <br />
+    <input
+      type="date"
+      id="start"
+      name="trip-start"
+      value="2018-07-22"
+      min="2018-01-01"
+      max="2018-12-31"
+    />
+  </div>
+
+  <div data-validate="Curp is required">
+    <label for="curp" class="texto">CURP</label>
+    <input type="text" name="curp" placeholder="Curp" class="form-control" />
+  </div>
+  <div data-validate="Telefono is required">
+    <label for="phone" class="texto">Teléfono</label>
+    <input
+      type="text"
+      name="phone"
+      placeholder="Teléfono"
+      class="form-control"
+    />
+  </div>
+  <div data-validate="Password is required">
+    <label for="password" class="texto">Contraseña</label>
+    <input
+      type="text"
+      name="password"
+      placeholder="Contraseña"
+      class="form-control"
+    />
+  </div>
+  <button class="btn btn-pink w-100">Guardar Cambios</button>
+</div>
