@@ -56,10 +56,11 @@ text-transform: uppercase;
 .btn-pink{
     background-color:#fdebea ;
     border-radius: 2rem;
-    margin: 10px auto;
+    margin: 35px auto;
     
     /* margin-bottom: 10px; */}
     .btn-pink:hover{
+      
         background-color: #30313a;
         color: white;
     }
@@ -67,5 +68,9 @@ text-transform: uppercase;
     color:#f5b6be;
     
   
+}
+.center{
+  justify-content: center;
+  align-items: center;
 }
 

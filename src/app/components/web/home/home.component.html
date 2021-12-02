@@ -1,9 +1,271 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Fluid jumbotron</h1>
-    <p class="lead">
-      This is a modified jumbotron that occupies the entire horizontal space of
-      its parent.
-    </p>
+<div
+  id="carouselExampleCaptions"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../../../images/c1.jpg" alt="..." />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Buscador de lugares</h5>
+        <p>
+          ¿Quieres saber que tan seguro es asistir a un lugar de acuerdo a
+          opiniones de mas mujeres?
+        </p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="..." />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>¿Te sientes insegura donde estas?</h5>
+        <p>
+          Manda una alerta a tus contactos, o mujeres con la app que esten
+          cerca!
+        </p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="..." />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>¿Necesitas ayuda?</h5>
+        <p>Aqui hay algunas asociaciones dedicadas a la mujer</p>
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="container marketing">
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <div class="col-lg-4">
+      <svg
+        class="bd-placeholder-img rounded-circle"
+        width="140"
+        height="140"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Placeholder: 140x140"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+      >
+        <title>Placeholder</title>
+        <path
+          d="M7 0c-.593 0-1.104.157-1.527.463-.418.302-.717.726-.93 1.208C4.123 2.619 4 3.879 4 5.187v.504L3.382 6A2.5 2.5 0 0 0 2 8.236v2.576C2 13.659 4.22 16 7 16h2c2.78 0 5-2.342 5-5.188V7.51a.71.71 0 0 0 0-.02V5.186c0-1.13-.272-2.044-.748-2.772-.474-.726-1.13-1.235-1.849-1.59C9.981.123 8.26 0 7 0zm2.5 6.099V1.232c.51.11 1.008.267 1.46.49.596.293 1.099.694 1.455 1.24.355.543.585 1.262.585 2.225v1.69l-3.5-.778zm-1-5.025v4.803L5 5.099c.006-1.242.134-2.293.457-3.024.162-.366.363-.63.602-.801C6.292 1.105 6.593 1 7 1c.468 0 .98.018 1.5.074zM5 6.124 13 7.9v2.912C13 13.145 11.19 15 9 15H7c-2.19 0-4-1.855-4-4.188V8.236a1.5 1.5 0 0 1 .83-1.342l.187-.093c.01.265.024.58.047.92.062.938.19 2.12.462 2.937a.5.5 0 1 0 .948-.316c-.227-.683-.35-1.75-.413-2.688a29.17 29.17 0 0 1-.06-1.528v-.002z"
+        />
+        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+      </svg>
+
+      <h2>Heading</h2>
+      <p>
+        Some representative placeholder content for the three columns of text
+        below the carousel. This is the first column.
+      </p>
+      <p>
+        <a class="btn btn-secondary" href="#">View details &raquo;</a>
+      </p>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <svg
+        class="bd-placeholder-img rounded-circle"
+        width="140"
+        height="140"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Placeholder: 140x140"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+      >
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="#777" />
+        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+      </svg>
+
+      <h2>Heading</h2>
+      <p>
+        Another exciting bit of representative placeholder content. This time,
+        we've moved on to the second column.
+      </p>
+      <p>
+        <a class="btn btn-secondary" href="#">View details &raquo;</a>
+      </p>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <svg
+        class="bd-placeholder-img rounded-circle"
+        width="140"
+        height="140"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Placeholder: 140x140"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+      >
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="#777" />
+        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+      </svg>
+
+      <h2>Heading</h2>
+      <p>
+        And lastly this, the third column of representative placeholder content.
+      </p>
+      <p>
+        <a class="btn btn-secondary" href="#">View details &raquo;</a>
+      </p>
+    </div>
+
+    <hr class="featurette-divider" />
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">
+          First featurette heading.
+          <span class="text-muted">It’ll blow your mind.</span>
+        </h2>
+        <p class="lead">
+          Some great placeholder content for the first featurette here. Imagine
+          some exciting prose here.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <svg
+          class="
+            bd-placeholder-img bd-placeholder-img-lg
+            featurette-image
+            img-fluid
+            mx-auto
+          "
+          width="500"
+          height="500"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Placeholder: 500x500"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+        >
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#eee" />
+          <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+        </svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider" />
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">
+          Oh yeah, it’s that good.
+          <span class="text-muted">See for yourself.</span>
+        </h2>
+        <p class="lead">
+          Another featurette? Of course. More placeholder content here to give
+          you an idea of how this layout would work with some actual real-world
+          content in place.
+        </p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <svg
+          class="
+            bd-placeholder-img bd-placeholder-img-lg
+            featurette-image
+            img-fluid
+            mx-auto
+          "
+          width="500"
+          height="500"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Placeholder: 500x500"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+        >
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#eee" />
+          <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+        </svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider" />
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">
+          And lastly, this one. <span class="text-muted">Checkmate.</span>
+        </h2>
+        <p class="lead">
+          And yes, this is the last block of representative placeholder content.
+          Again, not really intended to be actually read, simply here to give
+          you a better view of what this would look like with some actual
+          content. Your content.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <svg
+          class="
+            bd-placeholder-img bd-placeholder-img-lg
+            featurette-image
+            img-fluid
+            mx-auto
+          "
+          width="500"
+          height="500"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Placeholder: 500x500"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+        >
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#eee" />
+          <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+        </svg>
+      </div>
+    </div>
+
+    <hr class="featurette-divider" />
   </div>
 </div>
