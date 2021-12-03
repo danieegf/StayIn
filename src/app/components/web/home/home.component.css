@@ -87,4 +87,7 @@ body {
       margin-top: 7rem;
     }
   }
-  
+  .imgg{
+    object-fit: cover;
+    opacity: .4;
+  }
