@@ -91,3 +91,33 @@ body {
     object-fit: cover;
     opacity: .4;
   }
+  .imgg2{
+    object-fit: contain;
+    opacity: .4;
+  }
+  .btn-pink{
+    background-color:#fdebea ;
+    border-radius: 2rem;
+    margin: 35px auto;
+    
+    /* margin-bottom: 10px; */}
+    .btn-pink:hover{
+      
+        background-color: #30313a;
+        color: white;
+    }
+    .texto{
+        color: white;
+        margin-top: 15px;
+        font-family: 'PT Sans', sans-serif;
+        text-transform: uppercase;
+        
+        }
+        .txt-title{
+            color: #f5b6be;
+            margin: 5px;
+            font-size: medium;
+        }
+        .txt{
+            color: #f5b6be;
+        }
