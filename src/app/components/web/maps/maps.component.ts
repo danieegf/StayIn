@@ -56,6 +56,11 @@ export class MapsComponent implements OnInit, AfterViewInit {
       });
 
   }
+
+
+  ir_a_marcador(){
+    
+  }
 }
 
 

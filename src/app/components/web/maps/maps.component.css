@@ -4,7 +4,14 @@
 }
 
 .list-group {
-    position: fixed;
+    position: relative;
+    top: 20px;
+    right: 20px;
+    z-index: 99;
+}
+
+.list-group_bottom {
+    position: relative;
     top: 20px;
     right: 20px;
     z-index: 99;
