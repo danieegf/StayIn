@@ -1,14 +1,10 @@
-
-
 body {
     display: flex;
     align-items: center;
     padding-top: 40px;
     padding-bottom: 40px;
     height: 100%;height: 100%;
-   
-  }
-  
+}  
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -17,16 +13,15 @@ body {
   border-radius: 50%;
   text-align: center;
 }
-
 .form-signin .checkbox {
  color:#f5b6be;
  font-weight: 400;
-}
+ font-family: 'Sanchez', serif;
 
+}
 .form-signin .form-floating:focus-within {
   z-index: 2;
 }
-
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
@@ -40,37 +35,37 @@ body {
 }
 .texto{
 color: white;
-margin-top: 15px;
-font-family: 'PT Sans', sans-serif;
-text-transform: uppercase;
-
-}
-.texto:first-child{
+margin-top: 25px;
+font-family: 'Poiret One', cursive;
+font-size: 20px;
+}.texto:first-child{
     margin-top: 0;
 }
 .txt-usuario{
     color: #f5b6be;
     margin: 5px;
     font-size: small;
+    font-family: 'Sanchez', serif;
 }
 .btn-pink{
     background-color:#fdebea ;
     border-radius: 2rem;
     margin: 10px auto;
-    
-    /* margin-bottom: 10px; */}
-    .btn-pink:hover{
+    font-size: 20px;
+    color: #30313a;
+    font-family: 'Lobster Two', cursive;
+}
+.btn-pink:hover{
         background-color: #30313a;
         color: white;
     }
 .size{
     color:#f5b6be;
-    
-  
+    margin-bottom: 4px;
 }
 .title{
   color: white;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Lobster Two', cursive;
   font-size: 35px;
 }
 
