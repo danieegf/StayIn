@@ -4,6 +4,7 @@ import { ContactsComponent } from './components/web/contacts/contacts.component'
 import { ForgotpasswordComponent } from './components/web/forgotpassword/forgotpassword.component';
 import { HomeComponent } from './components/web/home/home.component';
 import { LoginComponent } from './components/web/login/login.component';
+import { MapsComponent } from './components/web/maps/maps.component';
 import { ProfileComponent } from './components/web/profile/profile.component';
 import { SignupComponent } from './components/web/signup/signup.component'; 
 import { SupportComponent } from './components/web/support/support.component';
@@ -38,6 +39,10 @@ const routes: Routes = [
 {
   path: 'profile',
   component: ProfileComponent
+},
+{
+  path: 'maps',
+  component: MapsComponent
 },
 {
   path: '**',

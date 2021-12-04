@@ -15,6 +15,7 @@ import { ProfileComponent } from './components/web/profile/profile.component';
 import { ContactsComponent } from './components/web/contacts/contacts.component';
 import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
+import { MapsComponent } from './components/web/maps/maps.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     ForgotpasswordComponent,
     SupportComponent,
     ProfileComponent,
-    ContactsComponent
+    ContactsComponent,
+    MapsComponent
   ],
 //exportar componentes, directivas y canalizaciones que luego se pueden usar en otros módulos.
   imports: [
