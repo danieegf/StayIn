@@ -7,6 +7,8 @@ import { environment } from 'src/environments/environment';
   templateUrl: './maps.component.html',
   styleUrls: ['./maps.component.css']
 })
+
+
 export class MapsComponent implements OnInit, AfterViewInit {
   map: mapboxgl.Map | undefined;
   style = 'mapbox://styles/mapbox/streets-v11';
@@ -38,14 +40,21 @@ export class MapsComponent implements OnInit, AfterViewInit {
       zoom: 13,
       center: [this.lng, this.lat]
     });
-    
+
     const markerHtml: HTMLElement = document.createElement('div');
+    markerHtml.id = 'idUnico'
     markerHtml.className = '.marker';
-    markerHtml.innerHTML = '<button type="button" class="btn btn-primary">Zona No Segura</button>';
-    let popup =new mapboxgl.Marker(markerHtml)
-    popup.setLngLat([this.lng, this.lat])
-    popup.addTo(this.map)
-    
+    markerHtml.innerHTML = '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Launch demo modal </button>';
+    let marcador = new mapboxgl.Marker(markerHtml)
+    marcador.setLngLat([this.lng, this.lat])
+    marcador.addTo(this.map)
+
+    marcador.getElement()
+      .addEventListener('click', () => {
+        console.log('le di click al marcador ', marcador);
+        alert('Hola Perro')
+      });
+
   }
 }
 
