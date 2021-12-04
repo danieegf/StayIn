@@ -1,27 +1,20 @@
 <div class="form-signin center">
-  <div>
     <div>
-      <form #AliasForm="ngForm">
-        <span class="texto"> Login </span>
-        <div class="size">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="80"
-            height="80"
-            fill="currentColor"
-            class="bi bi-key"
-            viewBox="0 0 16 16"
-          >
+        <div>
+            <form #AliasForm="ngForm">
+                <span class="texto"> Login </span>
+                <div class="size">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
             <path
               d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"
             />
             <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
           </svg>
-        </div>
+                </div>
 
-        <!-- <span class="text-danger">El correo es obligatorio</span> -->
-        <div>
-          <!-- Cuando se usa NgModel se debe de  importar   Forms Module 
+                <!-- <span class="text-danger">El correo es obligatorio</span> -->
+                <div>
+                    <!-- Cuando se usa NgModel se debe de  importar   Forms Module 
                     en src/app/app.module.ts
                 import { FormsModule } from '@angular/forms';
             y agregar a 
@@ -29,56 +22,42 @@
     BrowserModule,
     AppRoutingModule,
     FormsModule
-  ]--><label for="name" class="texto">Contraseña</label>
-          <input
-            type="text"
-            name="email"
-            required
-            email
-            placeholder="Email"
-            [(ngModel)]="user.email"
-            class="form-control"
-          />
-        </div>
+  ]--><label for="name" class="texto">Usuario</label>
+                    <input type="text" name="email" required email placeholder="Email" [(ngModel)]="user.email" class="form-control" />
+                </div>
 
-        <!-- <span class="text-danger">La contraseña debe de ser más de 6 letras</span> -->
-        <div data-validate="Password is required">
-          <label for="name" class="texto">Contraseña</label>
-          <input
-            type="password"
-            name="pass"
-            placeholder="Password"
-            [(ngModel)]="user.password"
-            lass="form-control"
-          />
-        </div>
+                <!-- <span class="text-danger">La contraseña debe de ser más de 6 letras</span> -->
+                <div data-validate="Password is required">
+                    <label for="name" class="texto">Contraseña</label>
+                    <input type="password" name="pass" placeholder="Password" [(ngModel)]="user.password" class="form-control" />
+                </div>
 
-        <div>
-          <div>
-            <input id="ckb1" type="checkbox" name="remember-me" />
-            <label for="ckb1" class="checkbox"> Recordar mi usuario </label>
-          </div>
+                <div>
+                    <div>
+                        <input id="ckb1" type="checkbox" name="remember-me" />
+                        <label for="ckb1" class="checkbox"> Recordar mi usuario </label>
+                    </div>
 
-          <div>
-            <a routerLink="/registro" class="txt-usuario">
+                    <div>
+                        <a routerLink="/registro" class="txt-usuario">
               ¿No tienes cuenta?
             </a>
-          </div>
-          <div>
-            <a routerLink="/forgotpassword" class="txt-usuario">
+                    </div>
+                    <div>
+                        <a routerLink="/forgotpassword" class="txt-usuario">
               ¿Has Olvidado Tu Contraseña?
             </a>
-          </div>
-        </div>
+                    </div>
+                </div>
 
-        <div>
-          <!-- En este punto debido a que angular evita que se recargue la pagina -->
+                <div>
+                    <!-- En este punto debido a que angular evita que se recargue la pagina -->
 
-          <button (click)="sumar(AliasForm)" class="btn btn-pink w-100">
+                    <button (click)="sumar(AliasForm)" class="btn btn-pink w-100">
             Ingresar
           </button>
+                </div>
+            </form>
         </div>
-      </form>
     </div>
-  </div>
 </div>
