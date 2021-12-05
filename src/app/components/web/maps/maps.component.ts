@@ -68,7 +68,9 @@ export class MapsComponent implements OnInit, AfterViewInit {
     return Math.floor((Math.random() * (180 - (-180) + 1)) + (-180));
   }
   ir_a_marcador() {
-
+    this.map.flyTo(
+      {center:[this.lng,this.lat]}
+    )
   }
 
   agregar_lugar() {
@@ -77,7 +79,9 @@ export class MapsComponent implements OnInit, AfterViewInit {
     markerHtml.className = '.marker';
     markerHtml.innerHTML = '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Launch demo modal </button>';
     let marcador = new mapboxgl.Marker(markerHtml,{draggable:true})
-    marcador.setLngLat([this.random_lng(), this.random_lat()])
+    this.lng=this.random_lng()
+    this.lat=this.random_lat()
+    marcador.setLngLat([this.lng,this.lat])
     marcador.addTo(this.map)
     
     
