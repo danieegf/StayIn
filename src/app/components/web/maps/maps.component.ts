@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 
 
 export class MapsComponent implements OnInit, AfterViewInit {
-  map: mapboxgl.Map | undefined;
+  map!: mapboxgl.Map;
   style = 'mapbox://styles/mapbox/streets-v11';
   lat = 37.75;
   lng = -122.41;
@@ -18,6 +18,16 @@ export class MapsComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit(): void {
+
+    this.map = new mapboxgl.Map({
+      accessToken: 'pk.eyJ1IjoiaXNzY2pybXBhY2hlY28iLCJhIjoiY2t3cmN2bXFnMHZtYzJ2bzg5c244NmNjaCJ9.E2CAv5faFoKPnByeMq93SA',
+      container: 'map',
+      style: this.style,
+      attributionControl: false,
+      zoom: 13,
+      center: [this.lng, this.lat]
+    });
+    this.map.addControl(new mapboxgl.NavigationControl());
     // this.map = new mapboxgl.Map({
     //   accessToken: 'pk.eyJ1IjoiaXNzY2pybXBhY2hlY28iLCJhIjoiY2t3cmN2bXFnMHZtYzJ2bzg5c244NmNjaCJ9.E2CAv5faFoKPnByeMq93SA',
     //   container: 'map',
@@ -32,22 +42,45 @@ export class MapsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.map = new mapboxgl.Map({
-      accessToken: 'pk.eyJ1IjoiaXNzY2pybXBhY2hlY28iLCJhIjoiY2t3cmN2bXFnMHZtYzJ2bzg5c244NmNjaCJ9.E2CAv5faFoKPnByeMq93SA',
-      container: 'map',
-      style: this.style,
-      attributionControl: false,
-      zoom: 13,
-      center: [this.lng, this.lat]
-    });
+    // Cargar marcadores existentes
 
+    // const markerHtml: HTMLElement = document.createElement('div');
+    // markerHtml.id = 'idUnico'
+    // markerHtml.className = '.marker';
+    // markerHtml.innerHTML = '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Launch demo modal </button>';
+    // let marcador = new mapboxgl.Marker(markerHtml)
+    // marcador.setLngLat([this.lng, this.lat])
+    // marcador.addTo(this.map)
+
+    // marcador.getElement()
+    //   .addEventListener('click', () => {
+    //     console.log('le di click al marcador ', marcador);
+    //     alert('Hola Perro')
+    //   });
+
+  }
+
+  random_lat() {
+    return Math.floor((Math.random() * (90 - (-90) + 1)) + (-90));
+  }
+
+  random_lng() {
+    return Math.floor((Math.random() * (180 - (-180) + 1)) + (-180));
+  }
+  ir_a_marcador() {
+
+  }
+
+  agregar_lugar() {
     const markerHtml: HTMLElement = document.createElement('div');
     markerHtml.id = 'idUnico'
     markerHtml.className = '.marker';
     markerHtml.innerHTML = '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Launch demo modal </button>';
-    let marcador = new mapboxgl.Marker(markerHtml)
-    marcador.setLngLat([this.lng, this.lat])
+    let marcador = new mapboxgl.Marker(markerHtml,{draggable:true})
+    marcador.setLngLat([this.random_lng(), this.random_lat()])
     marcador.addTo(this.map)
+    
+    
 
     marcador.getElement()
       .addEventListener('click', () => {
@@ -55,11 +88,6 @@ export class MapsComponent implements OnInit, AfterViewInit {
         alert('Hola Perro')
       });
 
-  }
-
-
-  ir_a_marcador(){
-    
   }
 }
 
