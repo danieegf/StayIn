@@ -1,6 +1,10 @@
-.mapa-container {
-    height: 100%;
-    width: 100%;
+.mapa {
+    height: 500px;
+    width: 500px;
+    position: static;
+    top: 20px;
+    right: 20px;
+    z-index: 99;
 }
 
 .list-group {

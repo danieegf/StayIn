@@ -16,6 +16,7 @@ import { ContactsComponent } from './components/web/contacts/contacts.component'
 import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
 import { MapsComponent } from './components/web/maps/maps.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { MapsComponent } from './components/web/maps/maps.component';
     AppRoutingModule,
     FormsModule,
     DataTablesModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
 //Inyección de Dependencias
   providers: [],
