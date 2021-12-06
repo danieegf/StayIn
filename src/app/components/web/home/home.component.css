@@ -80,7 +80,7 @@ body {
   }
 .imgg{
     object-fit: cover;
-    opacity: .6;
+    opacity: .4;
   }
   
 .btn-pink{
@@ -95,17 +95,18 @@ body {
         color: white;
     }
 .texto{
-        color: black;
+        color: white;
         margin-top: 15px;
-        font-family: 'Sanchez', serif;
-        text-transform: uppercase;
+        font-family:monospace;
+        font-size: 20px;
+       
         
         }
 .txt-title{
             color: black;
             margin: 5px;
             font-family: 'Poiret One', cursive;
-            font-size: medium;
+            font-size: 20px;
         }
 .txt{
             color: #f5b6be;
@@ -114,8 +115,12 @@ body {
           color: white;
           font-family: 'Lobster Two', cursive;
           font-size: 35px;
-          margin-bottom: 20px;
+          background-color: #f5b6be;
+          padding: 20px;
+          
+          
         }
 .second-card{
-          margin-top: 30px;
+          margin-top: 20px;
         }
+        

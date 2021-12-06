@@ -1,7 +1,8 @@
-.mapa-container {
-    height: 100%;
-    width: 100%;
-}
+body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #5a5a5a;
+  }
 
 .list-group {
     position: fixed;
@@ -13,3 +14,19 @@
 li {
     cursor: pointer;
 }
+ 
+
+.btn-pink{
+   position: fixed;
+    background-color:#fdebea ;
+    border-radius: 2rem;
+    position: fixed;
+    width: 10rem;
+    
+    
+    /* margin-bottom: 10px; */}
+.btn-pink:hover{
+      
+        background-color: #30313a;
+        color: white;
+    }
