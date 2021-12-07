@@ -1,14 +1,8 @@
 <div>
     <div>
-        <!-- <img
-      class="img-fluid"
-      src="https://www.capitalmujer.mx/wp-content/uploads/2020/08/mujeres-elegante-tema-estilo-arte-lineal_23-2148612866.jpg"
-      alt="IMAGEN"
-    />
-  </div> -->
         <div>
             <div>
-                <form class="form-signin">
+                <form #SignupForm="ngForm" class="form-signin">
                     <span class="title"> Crear nueva cuenta </span>
                     <div class="size">
                         <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-person-circle size" viewBox="0 0 16 16">
@@ -19,33 +13,48 @@
             />
           </svg>
                     </div>
-                    <!-- <span class="text-danger">El nombre es obligatorio</span> -->
                     <div>
-                        <label for="nombre" class="texto">Nombre</label>
-                        <input type="text" name="nombre" placeholder="Nombre" class="form-control" />
+                        <label for="nombre" class="texto">Primer Nombre</label>
+                        <input [(ngModel)]="user.P_Nombre" type="text" name="nombre" placeholder="Primer Nombre" class="form-control" />
                     </div>
                     <div>
-                        <label for="nombre" class="texto"> Apellidos</label>
-                        <input type="text" name="nombre" placeholder="Apellidos" class="form-control" />
+                        <label for="nombre" class="texto">Segundo Nombre</label>
+                        <input [(ngModel)]="user.S_Nombre" type="text" name="nombre" placeholder="Segundo Nombre" class="form-control" />
                     </div>
-
-                    <!-- <span class="text-danger">El correo es obligatorio</span> -->
+                    <div>
+                        <label for="nombre" class="texto"> Primer Apellido</label>
+                        <input [(ngModel)]="user.Apellido_Paterno" type="text" name="nombre" placeholder="Primer Apellido" class="form-control" />
+                    </div>
+                    <div>
+                        <label for="nombre" class="texto"> Segundo Apellido</label>
+                        <input [(ngModel)]="user.Apellido_Materno" type="text" name="nombre" placeholder="Segundo Apellido" class="form-control" />
+                    </div>
+                    <div>
+                        <label class="texto" for="start texto">Fecha de Nacimiento:</label>
+                        <br />
+                        <input [(ngModel)]="user.Fecha_Nacimiento" type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+                    </div>
                     <div>
                         <label for="email" class="texto">Email </label>
 
-                        <input type="text" name="email" placeholder="Email" class="form-control" />
+                        <input [(ngModel)]="user.Email" type="text" name="email" placeholder="Email" class="form-control" />
 
                         <span></span>
                     </div>
+                    <div>
+                        <label for="email" class="texto">Teléfono</label>
 
-                    <!-- <span class="text-danger">La contraseña debe de ser más de 6 letras</span> -->
+                        <input [(ngModel)]="user.Telefono" type="text" name="email" placeholder="Teléfono" class="form-control" />
+
+                        <span></span>
+                    </div>
                     <div data-validate="Password is required">
                         <label class="texto">Password </label>
 
-                        <input type="password" name="pass" placeholder="Password" class="form-control" />
+                        <input [(ngModel)]="user.Pass" type="password" name="pass" placeholder="Password" class="form-control" />
                     </div>
                     <div>
-                        <button class="btn btn-pink w-100" type="submit">Crear</button>
+                        <button (click)="createUser(SignupForm)" class="btn btn-pink w-100">Crear</button>
                     </div>
                     <div>
                         <input id="ckb1" type="checkbox" name="remember-me" />
@@ -54,8 +63,8 @@
                     <div>
                         <div>
                             <a routerLink="/registro" class="txt-usuario">
-              ¿Ya tienes cuenta? / <b>Ingresar</b>
-            </a>
+                            ¿Ya tienes cuenta? / <b>Ingresar</b>
+                    </a>
                         </div>
                     </div>
                 </form>

@@ -1,17 +1,52 @@
-<div id="map">
+<div id="map"></div>
+
+<div class="container">
+    <ul class="list-group" class="container">
+        <li class="list-group-item list-group-item-info" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+            +Agregar Lugar
+        </li>
+    </ul>
+    <div id="collapseExample" [ngbCollapse]="isCollapsed">
+        <form #SiteForm="ngForm" class="form-signin">
+
+            <div>
+                <label for="nombre" class="texto">Nombre del Sitio</label>
+                <input [(ngModel)]="site.Nombre" type="text" name="nombre" placeholder="Nombre del Sitio" class="form-control" />
+            </div>
+            <div>
+                <label for="nombre" class="texto">Descripción del Sitio</label>
+                <input [(ngModel)]="site.Descripcion" type="text" name="nombre" placeholder="Descripción del Sitio" class="form-control" />
+            </div>
+            <div>
+                <label for="nombre" class="texto">Latitud</label>
+                <input [(ngModel)]="site.Latitud" type="text" name="nombre" placeholder="Primer Apellido" class="form-control" />
+            </div>
+            <div>
+                <label for="nombre" class="texto">Longitud</label>
+                <input [(ngModel)]="site.Longitud" type="text" name="nombre" placeholder="Segundo Apellido" class="form-control" />
+            </div>
+            <div>
+                <button (click)="agregar_lugar(SiteForm)"  class="btn btn-pink w-100">Agregar Marcador</button>
+                <button (click)="agregar_lugar(SiteForm)"  class="btn btn-pink w-100">Guardar Cambios</button>
+                <button class="btn btn-pink w-100" (click)="isCollapsed = !isCollapsed">Cancelar</button>
+            </div>
+        </form>
+    </div>
 </div>
-<ul class="list-group" class="container">
-    <li class="list-group-item list-group-item-info" (click)="agregar_lugar()">
-        +Agregar Lugar
-    </li>
-</ul>
+
+
+
+
+
+
 <div class="album py-5 bg-light">
     <div class="container">
-
         <div class="col-md-4" (click)="ir_a_marcador()">
             <div class="card mb-4 shadow-sm">
                 <div class="card-body">
-                    <p class="card-text">Este sitio esta bien culero, roban matan y salatan.</p>
+                    <p class="card-text">
+                        Este sitio esta bien culero, roban matan y salatan.
+                    </p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <div class="text">Yo</div>
@@ -22,18 +57,6 @@
             </div>
         </div>
 
-
-
-        <ul class="list-group_bottom">
-            <li class="align-self-end list-group-item list-group-item-info">
-                +Agregar Comentario
-            </li>
-        </ul>
-
-
-
-
-
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -41,49 +64,51 @@
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+              <span aria-hidden="true">&times;</span>
+            </button>
                     </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
+                    <div class="modal-body">...</div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Close
+            </button>
                         <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
         </div>
 
-
-
         <ng-template #content let-modal>
-            <div class="modal-header">
-                <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-            </div>
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="dateOfBirth">Date of birth</label>
-                        <div class="input-group">
-                            <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
-                            </div>
+                        <input type="text" name="nombre" placeholder="Nombre del Sitio" class="form-control" />
+                        <div data-validate="Comments is required">
+                            <label class="texto" for="text">Comentarios</label>
+                            <textarea class="form-control form-floating" rows="5" id="comments" placeholder="Describe el Lugar" name="text"></textarea>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">
+          Save
+        </button>
+                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">
+          Cancelar
+        </button>
             </div>
         </ng-template>
-
-        <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
-
-        <hr>
+        <ul class="list-group_bottom">
+            <li (click)="open(content)" class="align-self-end list-group-item list-group-item-info">
+                +Agregar Comentario
+            </li>
+        </ul>
+        <hr />
 
         <pre>{{ closeResult }}</pre>
+    </div>
+</div>
+
+
+

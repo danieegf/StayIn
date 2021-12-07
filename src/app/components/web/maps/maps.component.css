@@ -24,3 +24,20 @@
 li {
     cursor: pointer;
 }
+
+.btn-pink{
+    background-color:#fdebea ;
+    border-radius: 2rem;
+    margin: 35px auto;
+    
+    /* margin-bottom: 10px; */}
+    .btn-pink:hover{
+      
+        background-color: #30313a;
+        color: white;
+    }
+.size{
+    color:#f5b6be;
+    
+  
+}

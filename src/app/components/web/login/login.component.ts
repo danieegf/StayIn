@@ -14,12 +14,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     //Inicializar usuario
     this.user= new User();
-    this.user.email="mail";
-    this.user.email="passwd";
+    this.user.Email="mail";
+    this.user.Pass="passwd";
   }
 
   sumar(form:NgForm) {
-    this.user.password=this.user.email!+this.user.password!;
+    this.user.Pass=this.user.Email!+this.user.Pass!;
     console.log(this.user)
     console.log(form)
   }
