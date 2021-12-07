@@ -1,11 +1,12 @@
 export class User {
-    Id?:Number;
-    P_Nombre?:string;
-    S_Nombre?:string;
-    Apellido_Paterno?:string;
-    Apellido_Materno?:string;
-    Fecha_Nacimiento?:Date;
-    Email?:string;
-    Telefono?:string;
-    Pass?:string;
+    id?:Number;
+    p_Nombre?:string;
+    s_Nombre?:string;
+    apellido_Paterno?:string;
+    apellido_Materno?:string;
+    fecha_Nacimiento?:Date;
+    email?:string;
+    telefono?:string;
+    pass?:string;
+    imagen?:string;
 }
