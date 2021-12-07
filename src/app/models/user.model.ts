@@ -1,7 +1,11 @@
 export class User {
- email? : string;
- user? : string;
- password? : string;
+    Id?:Number;
+    P_Nombre?:string;
+    S_Nombre?:string;
+    Apellido_Paterno?:string;
+    Apellido_Materno?:string;
+    Fecha_Nacimiento?:Date;
+    Email?:string;
+    Telefono?:string;
+    Pass?:string;
 }
-
-// Se instancia en el componente en el que se va a utilizar

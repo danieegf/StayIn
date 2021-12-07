@@ -1,11 +1,29 @@
+<<<<<<< HEAD
 body {
     padding-top: 3rem;
     padding-bottom: 3rem;
     color: #5a5a5a;
   }
+=======
+.mapa {
+    height: 500px;
+    width: 500px;
+    position: static;
+    top: 20px;
+    right: 20px;
+    z-index: 99;
+}
+>>>>>>> origin/main
 
 .list-group {
-    position: fixed;
+    position: relative;
+    top: 20px;
+    right: 20px;
+    z-index: 99;
+}
+
+.list-group_bottom {
+    position: relative;
     top: 20px;
     right: 20px;
     z-index: 99;
@@ -14,6 +32,7 @@ body {
 li {
     cursor: pointer;
 }
+<<<<<<< HEAD
  
 
 .btn-pink{
@@ -30,3 +49,22 @@ li {
         background-color: #30313a;
         color: white;
     }
+=======
+
+.btn-pink{
+    background-color:#fdebea ;
+    border-radius: 2rem;
+    margin: 35px auto;
+    
+    /* margin-bottom: 10px; */}
+    .btn-pink:hover{
+      
+        background-color: #30313a;
+        color: white;
+    }
+.size{
+    color:#f5b6be;
+    
+  
+}
+>>>>>>> origin/main
