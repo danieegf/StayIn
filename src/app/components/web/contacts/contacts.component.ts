@@ -29,7 +29,6 @@ export class ContactsComponent implements OnInit, OnDestroy {
       pageLength: 5
     }
 
-    // this.http.get('https://stayinsafe-api.azurewebsites.net/api/Contactos/GetContacts/1').
     this.http.get('https://stayinsafe-api.azurewebsites.net/api/Contactos/GetContacts/1').
       subscribe((res: any) => {
         console.log(res)

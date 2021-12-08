@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
+import { MessageStayiserviceService } from 'src/services/message.stayiservice.service';
+import { UserStayiserviceService } from 'src/services/user.stayiservice.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ import { User } from 'src/app/models/user.model';
 })
 export class LoginComponent implements OnInit {
   user!: User;
-  constructor() { }
+  constructor(private userService: UserStayiserviceService,private messageService:MessageStayiserviceService) { }
 
   ngOnInit(): void {
     //Inicializar usuario
@@ -18,12 +20,17 @@ export class LoginComponent implements OnInit {
     this.user.pass="passwd";
   }
 
-  sumar(form:NgForm) {
-    this.user.pass=this.user.email!+this.user.pass!;
-    console.log(this.user)
-    console.log(form)
-  }
 
+  login(form: NgForm) {
+    // this.user.pass=this.user.email!+this.user.pass!;
+    console.log(this.user);
+    console.log(form);
+    this.userService.login(this.user).subscribe({
+      next: (response) => console.log(response),
+      error: (e) => this.messageService.error(),
+      complete: () => this.messageService.success(),
+    });
+  }
 
 
 }

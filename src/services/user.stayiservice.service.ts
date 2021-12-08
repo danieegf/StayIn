@@ -28,7 +28,6 @@ export class UserStayiserviceService {
   // HttpClient API post() method => Create employee
   createUser(user: User): Observable<User> {
     console.log(JSON.stringify(user));
-
     return (
       this.httpClient
         .post<User>(
@@ -42,22 +41,20 @@ export class UserStayiserviceService {
         }),
           this.httpOptions
         )
-        // return this.httpClient.post<User>(baseURL + '/employees', JSON.stringify(user), this.httpOptions)
         .pipe(retry(1), catchError(this.handleError))
     );
   }
 
-  getRepos(user: User): Observable<User> {
+  login(user: User): Observable<User> {
     console.log(JSON.stringify(user));
     return this.httpClient.post<User>(
-      baseURL + '/employees',
+      baseURL + '/api/User/Register',
       JSON.stringify(user),
       this.httpOptions
     );
   }
 
   private handleError(err: HttpErrorResponse): Observable<never> {
-    // just a test ... more could would go here
     console.log(err.message);
     return throwError(() => err);
   }
