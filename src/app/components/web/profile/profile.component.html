@@ -12,7 +12,7 @@
   <div>
     <label for="nombre" class="texto">Primer Nombre</label>
     <input
-      [(ngModel)]="user.P_Nombre"
+      [(ngModel)]="user.p_Nombre"
       type="text"
       name="nombre"
       placeholder="Primer Nombre"
@@ -22,7 +22,7 @@
   <div>
     <label for="nombre" class="texto">Segundo Nombre</label>
     <input
-      [(ngModel)]="user.S_Nombre"
+      [(ngModel)]="user.s_Nombre"
       type="text"
       name="nombre"
       placeholder="Segundo Nombre"
@@ -32,7 +32,7 @@
   <div>
     <label for="nombre" class="texto"> Primer Apellido</label>
     <input
-      [(ngModel)]="user.Apellido_Paterno"
+      [(ngModel)]="user.apellido_Paterno"
       type="text"
       name="nombre"
       placeholder="Primer Apellido"
@@ -42,7 +42,7 @@
   <div>
     <label for="nombre" class="texto"> Segundo Apellido</label>
     <input
-      [(ngModel)]="user.Apellido_Materno"
+      [(ngModel)]="user.apellido_Materno"
       type="text"
       name="nombre"
       placeholder="Segundo Apellido"
@@ -53,7 +53,7 @@
     <label class="texto" for="start texto">Fecha de Nacimiento:</label>
     <br />
     <input
-      [(ngModel)]="user.Fecha_Nacimiento"
+      [(ngModel)]="user.fecha_Nacimiento"
       type="date"
       id="start"
       name="trip-start"
@@ -65,15 +65,6 @@
   <div>
     <label for="email" class="texto">Email </label>
 
-<<<<<<< HEAD
-    <input
-      [(ngModel)]="user.Email"
-      type="text"
-      name="email"
-      placeholder="Email"
-      class="form-control"
-    />
-=======
     <div>
         <label for="nombre" class="texto">Primer Nombre</label>
         <input [(ngModel)]="user.p_Nombre" type="text" name="nombre" placeholder="Primer Nombre" class="form-control" />
@@ -106,29 +97,18 @@
         <label for="email" class="texto">Teléfono</label>
 
         <input [(ngModel)]="user.telefono" type="text" name="email" placeholder="Teléfono" class="form-control" />
->>>>>>> main
 
     <span></span>
   </div>
   <div>
     <label for="email" class="texto">Teléfono</label>
 
-<<<<<<< HEAD
-    <input
-      [(ngModel)]="user.Telefono"
-      type="text"
-      name="email"
-      placeholder="Teléfono"
-      class="form-control"
-    />
-=======
         <input [(ngModel)]="user.pass" type="password" name="pass" placeholder="Password" class="form-control" />
     </div>
     <div>
         <button class="btn btn-pink w-100">Editar</button>
         <button (click)="updateUser(ProfileForm)" class="btn btn-pink w-100">Guardar Cambios</button>
     </div>
->>>>>>> main
 
     <span></span>
   </div>
@@ -136,7 +116,7 @@
     <label class="texto">Password </label>
 
     <input
-      [(ngModel)]="user.Pass"
+      [(ngModel)]="user.pass"
       type="password"
       name="pass"
       placeholder="Password"

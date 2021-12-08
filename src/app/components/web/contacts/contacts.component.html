@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <link
   rel="stylesheet"
   type="text/css"
@@ -15,12 +14,8 @@
   align="center"
   class="img"
 />
-<div class="btn">
-  <button class="btn btn-pink">Agregar Contacto</button>
-</div>
-<div class="btn">
-  <button class="btn btn-pink">Eliminar Contacto</button>
-</div>
+
+
 <div class="table tab">
   <table
     datatable
@@ -29,14 +24,14 @@
     class="row-border hover"
     class="table table-bordered"
   >
-=======
 <div class="container">
   <div class="container">
-    <ul class="list-group" class="container">
-        <li class="list-group-item list-group-item-info" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-            +Agregar Contacto
-        </li>
-    </ul>
+    <div class="btn">
+      <button class="btn btn-pink" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Agregar Contacto</button>
+    </div>
+    <div class="btn">
+      <button class="btn btn-pink" (click)="deleteContact(AddContactForm)">Eliminar Contacto</button>
+    </div>
     <div id="collapseExample" [ngbCollapse]="isCollapsed">
         <form #AddContactForm="ngForm" class="form-signin">
 
@@ -52,12 +47,10 @@
                 <label for="nombre" class="texto">Correo Electronico</label>
                 <input [(ngModel)]="contact.email" type="text" name="nombre" placeholder="Correo Electronico" class="form-control" />
             </div>
-
-            <div>
-                <button (click)="createContact(AddContactForm)"  class="btn btn-pink w-100">Agregar Contacto</button>              
-                <button class="btn btn-pink w-100" (click)="isCollapsed = !isCollapsed">Cancelar</button>
-                <button (click)="deleteContact(AddContactForm)"  class="btn btn-pink w-100">Eliminar Contact</button>
+            <div class="btn">
+              <button class="btn btn-pink" (click)="createContact(AddContactForm)" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Guardar</button>
             </div>
+
         </form>
     </div>
 </div>
@@ -66,7 +59,6 @@
 
 <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover"
 class="table table-striped table-bordered row-bordered hover">
->>>>>>> main
     <thead>
       <tr>
         <th>ID</th>
