@@ -38,7 +38,7 @@ input #rate-5:checked label{
 
 
 .map{
-    margin-top: 5%;
+    
     height: 300px;
 }
 
@@ -111,4 +111,9 @@ li {
     margin: 20px;
     text-align: center;
 
+  }
+  .t{
+      background-color: #30313a;
+      margin:0 0;
+      padding: 20px 20px;
   }

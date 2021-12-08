@@ -1,6 +1,33 @@
-<div class="container">
-<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover"
-class="table table-striped table-bordered row-bordered hover">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css"
+/>
+<div class="t">
+  <h2 class="title">Contactos de Emergencia</h2>
+</div>
+
+<img
+  src="https://cdn-icons-png.flaticon.com/512/1497/1497752.png"
+  alt=""
+  width="28%"
+  align="center"
+  class="img"
+/>
+<div class="btn">
+  <button class="btn btn-pink">Agregar Contacto</button>
+</div>
+<div class="btn">
+  <button class="btn btn-pink">Eliminar Contacto</button>
+</div>
+<div class="table tab">
+  <table
+    datatable
+    [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger"
+    class="row-border hover"
+    class="table table-bordered"
+  >
     <thead>
       <tr>
         <th>ID</th>

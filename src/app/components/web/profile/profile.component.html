@@ -1,53 +1,108 @@
+<div class="t">
+  <h5 class="title">Mi Perfil</h5>
+</div>
 <div class="form-signin center">
-    <h5 class="texto">Mi Perfil</h5>
-    <img src="https://i.pinimg.com/originals/69/26/dc/6926dc79ee3d02fb64f4cc04381c65d8.jpg" alt="Avatar" style="width: 200px" />
+  <img
+    src="https://i.pinimg.com/originals/69/26/dc/6926dc79ee3d02fb64f4cc04381c65d8.jpg"
+    alt="Avatar"
+    style="width: 200px"
+  />
 </div>
 <form #ProfileForm="ngForm" class="form-signin">
+  <div>
+    <label for="nombre" class="texto">Primer Nombre</label>
+    <input
+      [(ngModel)]="user.P_Nombre"
+      type="text"
+      name="nombre"
+      placeholder="Primer Nombre"
+      class="form-control"
+    />
+  </div>
+  <div>
+    <label for="nombre" class="texto">Segundo Nombre</label>
+    <input
+      [(ngModel)]="user.S_Nombre"
+      type="text"
+      name="nombre"
+      placeholder="Segundo Nombre"
+      class="form-control"
+    />
+  </div>
+  <div>
+    <label for="nombre" class="texto"> Primer Apellido</label>
+    <input
+      [(ngModel)]="user.Apellido_Paterno"
+      type="text"
+      name="nombre"
+      placeholder="Primer Apellido"
+      class="form-control"
+    />
+  </div>
+  <div>
+    <label for="nombre" class="texto"> Segundo Apellido</label>
+    <input
+      [(ngModel)]="user.Apellido_Materno"
+      type="text"
+      name="nombre"
+      placeholder="Segundo Apellido"
+      class="form-control"
+    />
+  </div>
+  <div>
+    <label class="texto" for="start texto">Fecha de Nacimiento:</label>
+    <br />
+    <input
+      [(ngModel)]="user.Fecha_Nacimiento"
+      type="date"
+      id="start"
+      name="trip-start"
+      value="2018-07-22"
+      min="2018-01-01"
+      max="2018-12-31"
+    />
+  </div>
+  <div>
+    <label for="email" class="texto">Email </label>
 
-    <div>
-        <label for="nombre" class="texto">Primer Nombre</label>
-        <input [(ngModel)]="user.P_Nombre" type="text" name="nombre" placeholder="Primer Nombre" class="form-control" />
-    </div>
-    <div>
-        <label for="nombre" class="texto">Segundo Nombre</label>
-        <input [(ngModel)]="user.S_Nombre" type="text" name="nombre" placeholder="Segundo Nombre" class="form-control" />
-    </div>
-    <div>
-        <label for="nombre" class="texto"> Primer Apellido</label>
-        <input [(ngModel)]="user.Apellido_Paterno" type="text" name="nombre" placeholder="Primer Apellido" class="form-control" />
-    </div>
-    <div>
-        <label for="nombre" class="texto"> Segundo Apellido</label>
-        <input [(ngModel)]="user.Apellido_Materno" type="text" name="nombre" placeholder="Segundo Apellido" class="form-control" />
-    </div>
-    <div>
-        <label class="texto" for="start texto">Fecha de Nacimiento:</label>
-        <br />
-        <input [(ngModel)]="user.Fecha_Nacimiento" type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
-    </div>
-    <div>
-        <label for="email" class="texto">Email </label>
+    <input
+      [(ngModel)]="user.Email"
+      type="text"
+      name="email"
+      placeholder="Email"
+      class="form-control"
+    />
 
-        <input [(ngModel)]="user.Email" type="text" name="email" placeholder="Email" class="form-control" />
+    <span></span>
+  </div>
+  <div>
+    <label for="email" class="texto">Teléfono</label>
 
-        <span></span>
-    </div>
-    <div>
-        <label for="email" class="texto">Teléfono</label>
+    <input
+      [(ngModel)]="user.Telefono"
+      type="text"
+      name="email"
+      placeholder="Teléfono"
+      class="form-control"
+    />
 
-        <input [(ngModel)]="user.Telefono" type="text" name="email" placeholder="Teléfono" class="form-control" />
+    <span></span>
+  </div>
+  <div data-validate="Password is required">
+    <label class="texto">Password </label>
 
-        <span></span>
-    </div>
-    <div data-validate="Password is required">
-        <label class="texto">Password </label>
-
-        <input [(ngModel)]="user.Pass" type="password" name="pass" placeholder="Password" class="form-control" />
-    </div>
-    <div>
-        <button class="btn btn-pink w-100">Editar</button>
-        <button (click)="updateUser(ProfileForm)" class="btn btn-pink w-100">Guardar Cambios</button>
-    </div>
-
-
+    <input
+      [(ngModel)]="user.Pass"
+      type="password"
+      name="pass"
+      placeholder="Password"
+      class="form-control"
+    />
+  </div>
+  <div>
+    <button class="btn btn-pink w-100">Editar</button>
+    <button (click)="updateUser(ProfileForm)" class="btn btn-pink w-100">
+      Guardar Cambios
+    </button>
+  </div>
 </form>

@@ -4,9 +4,7 @@ body {
     padding-bottom: 3rem;
     color: #5a5a5a;
   }
-  .carousel {
-    margin-bottom: 4rem;
-  }
+  
   /* Since positioning the image, we need to help out the caption */
   .carousel-caption {
     bottom: 3rem;
@@ -80,13 +78,13 @@ body {
   }
 .imgg{
     object-fit: cover;
-    opacity: .6;
+    opacity: .4;
   }
   
 .btn-pink{
     background-color:#fdebea ;
     border-radius: 2rem;
-    margin: 35px auto;
+    margin: 20px auto;
     
     /* margin-bottom: 10px; */}
 .btn-pink:hover{
@@ -96,7 +94,7 @@ body {
     }
 .texto{
         color: black;
-        margin-top: 15px;
+      
         font-family: 'Sanchez', serif;
         text-transform: uppercase;
         
@@ -110,12 +108,21 @@ body {
 .txt{
             color: #f5b6be;
         }
-.title{
-          color: white;
-          font-family: 'Lobster Two', cursive;
-          font-size: 35px;
-          margin-bottom: 20px;
-        }
+
 .second-card{
           margin-top: 30px;
         }
+       
+      .t{
+        background-color: #30313a;
+        margin:0 0;
+        padding: 20px 20px;
+      }
+      .title{
+        color: white;
+        font-family: 'Lobster Two', cursive;
+        font-size: 35px;
+        margin: 20px;
+        text-align: center;
+      
+      }
