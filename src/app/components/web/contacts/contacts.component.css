@@ -72,3 +72,37 @@ text-transform: uppercase;
   justify-content: center;
   align-items: center;
 }
+
+.title{
+  color: white;
+  font-family: 'Lobster Two', cursive;
+  font-size: 35px;
+  margin: 20px;
+  text-align: center;
+ 
+
+}
+.t{
+    background-color: #30313a;
+}
+.tab{
+    background-color: white;
+   margin-left: 8px;
+    width: 96%;
+}
+.img{
+    align-items: center;
+    margin-left: 35%;
+    margin-bottom: 10px;
+}
+.btn-pink{
+  background-color:#fdebea ;
+  border-radius: 2rem;
+  margin: 10px auto;
+  
+  /* margin-bottom: 10px; */}
+  .btn-pink:hover{
+    
+      background-color: #30313a;
+      color: white;
+  }
