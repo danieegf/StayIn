@@ -15,7 +15,8 @@ import { NgForm } from '@angular/forms';
 
 export class MapsComponent implements OnInit, AfterViewInit {
   site!: Site;
-  public isCollapsed = true;
+  public isCollapsedSiteForm = true;
+  public isCollapsedCommentForm = true;
   map!: mapboxgl.Map;
   style = 'mapbox://styles/mapbox/dark-v10';
   lat = 37.75;
@@ -91,25 +92,6 @@ export class MapsComponent implements OnInit, AfterViewInit {
         console.log('le di click al marcador ', marcador);
         alert('Hola Perro')
       });
-  }
-
-  open(content: any) {
-    console.log(content)
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
   }
 }
 
