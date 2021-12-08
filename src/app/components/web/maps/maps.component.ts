@@ -4,6 +4,8 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { NgbDate, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Site } from 'src/app/models/sitio.model';
 import { NgForm } from '@angular/forms';
+import { SiteStayiserviceService } from 'src/services/site.stayiservice.service';
+import { MessageStayiserviceService } from 'src/services/message.stayiservice.service';
 
 
 @Component({
@@ -22,7 +24,7 @@ export class MapsComponent implements OnInit, AfterViewInit {
   lat = 37.75;
   lng = -122.41;
   closeResult = '';
-  constructor() { }
+  constructor(private siteService: SiteStayiserviceService,private messageService:MessageStayiserviceService) { }
 
 
   ngOnInit(): void {
@@ -92,6 +94,17 @@ export class MapsComponent implements OnInit, AfterViewInit {
         console.log('le di click al marcador ', marcador);
         alert('Hola Perro')
       });
+  }
+
+  createSite(form: NgForm){
+    console.log(this.site);
+    console.log(form);
+    this.siteService.createSite(this.site)
+    .subscribe({
+      next: (response) => console.log(response),
+      error: (e) => this.messageService.error(),
+      complete: () =>this.messageService.success()
+  });
   }
 }
 

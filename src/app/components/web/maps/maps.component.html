@@ -17,7 +17,7 @@
       <div>
         <label for="nombre" class="texto">Nombre del Sitio</label>
         <input
-          [(ngModel)]="site.Nombre"
+          [(ngModel)]="site.nombre"
           type="text"
           name="nombre"
           placeholder="Nombre del Sitio"
@@ -27,7 +27,7 @@
       <div>
         <label for="nombre" class="texto">Descripción del Sitio</label>
         <input
-          [(ngModel)]="site.Descripcion"
+          [(ngModel)]="site.descripcion"
           type="text"
           name="nombre"
           placeholder="Descripción del Sitio"
@@ -37,20 +37,20 @@
       <div>
         <label for="nombre" class="texto">Latitud</label>
         <input
-          [(ngModel)]="site.Latitud"
+          [(ngModel)]="site.latitud"
           type="text"
           name="nombre"
-          placeholder="Primer Apellido"
+          placeholder="Latitud"
           class="form-control"
         />
       </div>
       <div>
         <label for="nombre" class="texto">Longitud</label>
         <input
-          [(ngModel)]="site.Longitud"
+          [(ngModel)]="site.longitud"
           type="text"
           name="nombre"
-          placeholder="Segundo Apellido"
+          placeholder="Longitud"
           class="form-control"
         />
       </div>
@@ -58,7 +58,7 @@
         <button (click)="agregar_lugar(SiteForm)" class="btn btn-pink w-100">
           Agregar Marcador
         </button>
-        <button (click)="agregar_lugar(SiteForm)" class="btn btn-pink w-100">
+        <button (click)="createSite(SiteForm)" class="btn btn-pink w-100">
           Guardar Cambios
         </button>
         <button class="btn btn-pink w-100" (click)="isCollapsedSiteForm = !isCollapsedSiteForm">
@@ -84,7 +84,7 @@
         <div>
           <label for="nombre" class="texto">Título de Comentario</label>
           <input
-            [(ngModel)]="site.Nombre"
+            [(ngModel)]="site.nombre"
             type="text"
             name="nombre"
             placeholder="Nombre del Sitio"

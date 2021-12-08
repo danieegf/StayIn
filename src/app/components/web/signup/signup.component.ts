@@ -20,7 +20,6 @@ export class SignupComponent implements OnInit {
   }
 
   createUser(form: NgForm): void  {
-    
     console.log(this.user);
     console.log(form);
     this.userService.createUser(this.user)

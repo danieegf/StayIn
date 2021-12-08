@@ -14,8 +14,6 @@ const baseURL = 'https://stayinsafe-api.azurewebsites.net';
   providedIn: 'root',
 })
 export class ContactStayiserviceService {
-  
-  // Http Options
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -48,7 +46,6 @@ export class ContactStayiserviceService {
   }
 
   private handleError(err: HttpErrorResponse): Observable<never> {
-    // just a test ... more could would go here
     console.log(err.message);
     return throwError(() => err);
   }
