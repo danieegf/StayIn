@@ -1,4 +1,4 @@
-export class Comment {
+export class Comments {
     id_Comentario?:Number;
     comentario?:string;
     descripcion?:string;

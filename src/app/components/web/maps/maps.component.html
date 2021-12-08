@@ -116,7 +116,7 @@
     </div>
   </div>
 
-  <div class="album py-5 bg-light">
+  <div class="album py-5 bg-light" *ngFor="let comment of lstcomments">
     <div class="container">
       <div class="star-widget">
         <input type="radio" name="rate" id="rate-5" />
@@ -133,10 +133,10 @@
       <div class="col-md-4" (click)="ir_a_marcador()">
         <div class="card mb-4 shadow-sm">
           <div class="card-body">
-            <p class="card-text">Lugar tranquilo por la tarde y durante el dia</p>
+            <p class="card-text">{{ comment.comentario }}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <div class="text">Paola Ortiz</div>
+                <div class="text">{{ comment.descripcion }}</div>
               </div>
               <small class="text-muted">12/12/2021</small>
             </div>

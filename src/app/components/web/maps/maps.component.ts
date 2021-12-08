@@ -6,7 +6,14 @@ import { Site } from 'src/app/models/sitio.model';
 import { NgForm } from '@angular/forms';
 import { SiteStayiserviceService } from 'src/services/site.stayiservice.service';
 import { MessageStayiserviceService } from 'src/services/message.stayiservice.service';
+import { Comments } from 'src/app/models/comment.model';
+import { HttpClient } from '@angular/common/http';
 
+interface Propiedad {
+  titulo: string;
+  descripcion: string;
+  lngLat: [number, number];
+}
 
 @Component({
   selector: 'app-maps',
@@ -17,6 +24,9 @@ import { MessageStayiserviceService } from 'src/services/message.stayiservice.se
 
 export class MapsComponent implements OnInit, AfterViewInit {
   site!: Site;
+  comment!: Comments;
+  lstcomments!:Comments[]
+  propiedades!: Propiedad[] 
   public isCollapsedSiteForm = true;
   public isCollapsedCommentForm = true;
   map!: mapboxgl.Map;
@@ -24,10 +34,15 @@ export class MapsComponent implements OnInit, AfterViewInit {
   lat = 37.75;
   lng = -122.41;
   closeResult = '';
-  constructor(private siteService: SiteStayiserviceService,private messageService:MessageStayiserviceService) { }
+  constructor(private http: HttpClient,private siteService: SiteStayiserviceService,private messageService:MessageStayiserviceService) { }
 
 
   ngOnInit(): void {
+    this.http.get('https://stayinsafe-api.azurewebsites.net/api/Comentarios/GetComments/1').
+    subscribe((res: any) => {
+      console.log(res)
+      this.lstcomments = res;
+    });
     this.site= new Site();
 
     this.map = new mapboxgl.Map({
@@ -50,6 +65,12 @@ export class MapsComponent implements OnInit, AfterViewInit {
       })
       );
     this.map.addControl(new mapboxgl.NavigationControl());
+
+
+    //Carga de comentarios
+
+    
+
 
   }
 
@@ -106,6 +127,20 @@ export class MapsComponent implements OnInit, AfterViewInit {
       complete: () =>this.messageService.success()
   });
   }
+
+  createComment(form: NgForm){
+    console.log(this.site);
+    console.log(form);
+    this.siteService.createSite(this.site)
+    .subscribe({
+      next: (response) => console.log(response),
+      error: (e) => this.messageService.error(),
+      complete: () =>this.messageService.success()
+  });
+  }
+
+
+  
 }
 
 
