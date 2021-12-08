@@ -1,10 +1,47 @@
-<<<<<<< HEAD
-body {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    color: #5a5a5a;
-  }
-=======
+   *{ 
+        box-sizing: border-box;
+    }
+html, body{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    text-align: center;
+    background: white;
+    margin-top: 20%;
+
+}
+.container .star-widget input{
+    align-items: center;
+    display: none;
+}.star-widget label{
+    font-size: 20px;
+    color: #444;
+    padding: 10px;
+    float: none;
+    transition: all 0.2s ease;
+}.star-widget label:hover{
+    color: #fd4;
+
+}
+input:not(:checked) label:hover,
+input:not(:checked) label:hover label{
+    color: #fd4;
+}
+input::checked label{
+    color: #fd4;
+}
+input #rate-5:checked label{
+    color: #fd7;
+    text-shadow: 0 0 20px #952;
+}
+
+
+
+.map{
+    margin-top: 5%;
+    height: 300px;
+}
+
 .mapa {
     height: 500px;
     width: 500px;
@@ -12,8 +49,8 @@ body {
     top: 20px;
     right: 20px;
     z-index: 99;
+    
 }
->>>>>>> origin/main
 
 .list-group {
     position: relative;
@@ -32,29 +69,11 @@ body {
 li {
     cursor: pointer;
 }
-<<<<<<< HEAD
- 
-
-.btn-pink{
-   position: fixed;
-    background-color:#fdebea ;
-    border-radius: 2rem;
-    position: fixed;
-    width: 10rem;
-    
-    
-    /* margin-bottom: 10px; */}
-.btn-pink:hover{
-      
-        background-color: #30313a;
-        color: white;
-    }
-=======
 
 .btn-pink{
     background-color:#fdebea ;
     border-radius: 2rem;
-    margin: 35px auto;
+    margin: 10px auto;
     
     /* margin-bottom: 10px; */}
     .btn-pink:hover{
@@ -67,4 +86,29 @@ li {
     
   
 }
->>>>>>> origin/main
+.btn-add{
+    background-color:#fdebea ;
+    border-radius: 2rem;
+    margin: 35px auto;
+    color: black;
+    text-align: center;
+    
+    /* margin-bottom: 10px; */}
+    .btn-add:hover{
+      
+        background-color: #30313a;
+        color: white;
+}
+.img{
+   
+    object-fit: cover;
+   
+}
+.title{
+    color: white;
+    font-family: 'Lobster Two', cursive;
+    font-size: 35px;
+    margin: 20px;
+    text-align: center;
+
+  }
