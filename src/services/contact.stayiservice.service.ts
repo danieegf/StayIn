@@ -41,7 +41,7 @@ export class ContactStayiserviceService {
 
 
   deleteContact(contact: Contact): Observable<Contact> {
-    contact.id_Contacto=1
+    contact.id_Contacto=19
     console.log(JSON.stringify(contact.id));
 
     return this.httpClient.delete<any>(baseURL + '/api/Contactos/DeleteContact/'+`${ contact.id_Contacto }`);

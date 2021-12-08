@@ -1,7 +1,8 @@
-<<<<<<< HEAD
-<div class="t">
-  <h2 class="title">Ver Lugares</h2>
-=======
+<div role="container ">
+    <div id="map" class="maps">
+      <div class="list-group"></div>
+    </div>
+    
 <div id="map"></div>
 
 <div class="container">
@@ -70,207 +71,11 @@
       </div>
     </form>
   </div>
->>>>>>> main
 </div>
 
 <div id="map" class="map"></div>
 
 <div class="container">
-<<<<<<< HEAD
-  <ul class="list-group" class="container">
-    <li
-      class="list-group-item list-group-item-info btn-add"
-      (click)="isCollapsed = !isCollapsed"
-      [attr.aria-expanded]="!isCollapsed"
-      aria-controls="collapseExample"
-    >
-      + Agregar Lugar
-    </li>
-  </ul>
-  <div id="collapseExample" [ngbCollapse]="isCollapsed">
-    <form #SiteForm="ngForm" class="form-signin">
-      <div>
-        <label for="nombre" class="texto">Nombre del Sitio</label>
-        <input
-          [(ngModel)]="site.Nombre"
-          type="text"
-          name="nombre"
-          placeholder="Nombre del Sitio"
-          class="form-control"
-        />
-      </div>
-      <div>
-        <label for="nombre" class="texto">Descripción del Sitio</label>
-        <input
-          [(ngModel)]="site.Descripcion"
-          type="text"
-          name="nombre"
-          placeholder="Descripción del Sitio"
-          class="form-control"
-        />
-      </div>
-      <div>
-        <label for="nombre" class="texto">Latitud</label>
-        <input
-          [(ngModel)]="site.Latitud"
-          type="text"
-          name="nombre"
-          placeholder="Latitud"
-          class="form-control"
-        />
-      </div>
-      <div>
-        <label for="nombre" class="texto">Longitud</label>
-        <input
-          [(ngModel)]="site.Longitud"
-          type="text"
-          name="nombre"
-          placeholder="Longitud"
-          class="form-control"
-        />
-      </div>
-      <div>
-        <button (click)="agregar_lugar(SiteForm)" class="btn btn-pink w-100">
-          Agregar Marcador
-        </button>
-        <button (click)="agregar_lugar(SiteForm)" class="btn btn-pink w-100">
-          Guardar Cambios
-        </button>
-        <button class="btn btn-pink w-100" (click)="isCollapsed = !isCollapsed">
-          Cancelar
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div class="album py-5 bg-light">
-  <div class="container">
-    <div class="star-widget">
-      <input type="radio" name="rate" id="rate-5" />
-      <label for="rate-5" class="fas fa-star bi-star-fill"></label>
-      <input type="radio" name="rate" id="rate-4" />
-      <label for="rate-4" class="fas fa-star bi-star-fill"></label>
-      <input type="radio" name="rate" id="rate-3" />
-      <label for="rate-3" class="fas bi-star-fill"></label>
-      <input type="radio" name="rate" id="rate-2" />
-      <label for="rate-2" class="fas fa-star bi-star-fill"></label>
-      <input type="radio" name="rate" id="rate-1" />
-      <label for="rate-1" class="fas fa-star bi-star-fill"></label>
-    </div>
-    <div class="col-md-4" (click)="ir_a_marcador()">
-      <div class="card mb-4 shadow-sm">
-        <div class="card-body">
-          <p class="card-text">Lugar tranquilo por la tarde y durante el dia</p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <div class="text">Paola Ortiz</div>
-            </div>
-            <small class="text-muted">12/12/2021</small>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button
-              type="button"
-              class="close btn-pink"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">...</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <ng-template #content let-modal>
-      <div class="modal-body">
-        <form>
-          <label class="texto" for="text">Sitio a calificar</label>
-          <div class="form-group">
-            <input
-              type="text"
-              name="nombre"
-              placeholder="Nombre del Sitio"
-              class="form-control"
-            />
-            <div data-validate="Comments is required">
-              <label class="texto" for="text">Comentarios</label>
-              <textarea
-                class="form-control form-floating"
-                rows="5"
-                id="comments"
-                placeholder="Describe el Lugar"
-                name="text"
-              ></textarea>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-pink"
-          (click)="modal.close('Save click')"
-        >
-          Guardar
-        </button>
-        <button
-          type="button"
-          class="btn btn-pink"
-          (click)="modal.close('Save click')"
-        >
-          Cancelar
-        </button>
-      </div>
-    </ng-template>
-    <ul class="list-group_bottom">
-      <li
-        (click)="open(content)"
-        class="align-self-end list-group-item list-group-item-info btn-add"
-      >
-        + Agregar Comentario
-      </li>
-    </ul>
-    <div class="img">
-      <img
-        width="100%"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjnfS5jP7vPz1fdKoezKxiPweBdF-ISffUGw&usqp=CAU"
-        alt="sites"
-      />
-    </div>
-    <hr />
-
-    <!-- <pre>{{ closeResult }}</pre> -->
-  </div>
-</div>
-=======
     <ul class="list-group" class="container">
       <li
         class="list-group-item list-group-item-info"
@@ -338,4 +143,3 @@
   
 
   
->>>>>>> main
