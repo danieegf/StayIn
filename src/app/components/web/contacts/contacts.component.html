@@ -1,4 +1,37 @@
 <div class="container">
+  <div class="container">
+    <ul class="list-group" class="container">
+        <li class="list-group-item list-group-item-info" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+            +Agregar Contacto
+        </li>
+    </ul>
+    <div id="collapseExample" [ngbCollapse]="isCollapsed">
+        <form #AddContactForm="ngForm" class="form-signin">
+
+            <div>
+                <label for="nombre" class="texto">Nombre del Contacto</label>
+                <input [(ngModel)]="contact.alias" type="text" name="nombre" placeholder="Nombre del Contacto" class="form-control" />
+            </div>
+            <div>
+                <label for="nombre" class="texto">Número de Teléfono</label>
+                <input [(ngModel)]="contact.telefono" type="text" name="nombre" placeholder="Número de Teléfono" class="form-control" />
+            </div>
+            <div>
+                <label for="nombre" class="texto">Correo Electronico</label>
+                <input [(ngModel)]="contact.email" type="text" name="nombre" placeholder="Correo Electronico" class="form-control" />
+            </div>
+
+            <div>
+                <button (click)="createContact(AddContactForm)"  class="btn btn-pink w-100">Agregar Contacto</button>              
+                <button class="btn btn-pink w-100" (click)="isCollapsed = !isCollapsed">Cancelar</button>
+                <button (click)="deleteContact(AddContactForm)"  class="btn btn-pink w-100">Eliminar Contact</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
 <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover"
 class="table table-striped table-bordered row-bordered hover">
     <thead>
@@ -10,9 +43,9 @@ class="table table-striped table-bordered row-bordered hover">
     </thead>
     <tbody>
       <tr *ngFor="let e of data">
-        <td>{{ e.employee_name }}</td>
-        <td>{{ e.employee_salary }}</td>
-        <td>{{ e.employee_name }}</td>
+        <td>{{ e.alias }}</td>
+        <td>{{ e.telefono }}</td>
+        <td>{{ e.email }}</td>
       </tr>
     </tbody>
   </table>

@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Subject } from 'rxjs';
+import { Contact } from 'src/app/models/contact.model';
+import { ContactStayiserviceService } from 'src/services/contact.stayiservice.service';
+import { MessageStayiserviceService } from 'src/services/message.stayiservice.service';
 
 @Component({
   selector: 'app-contacts',
@@ -8,32 +12,52 @@ import { Subject } from 'rxjs';
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit, OnDestroy {
+  contact!: Contact;
+  public isCollapsed = true;
   dtOptions: DataTables.Settings = {};
-  // We use this trigger because fetching the list of persons can be quite long,
-  // thus we ensure the data is fetched before rendering
   dtTrigger: Subject<any> = new Subject<any>();
   data!: any;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private contactService: ContactStayiserviceService,private messageService:MessageStayiserviceService) { }
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
   }
 
   ngOnInit(): void {
+    this.contact= new Contact();
     this.dtOptions = {
       pagingType: "full_numbers",
       pageLength: 5
     }
-    this.http.get('https://dummy.restapiexample.com/api/v1/employees').
+
+    // this.http.get('https://stayinsafe-api.azurewebsites.net/api/Contactos/GetContacts/1').
+    this.http.get('https://stayinsafe-api.azurewebsites.net/api/Contactos/GetContacts/1').
       subscribe((res: any) => {
-        this.data = res.data;
-        console.log(res.data)
-        console.log(this.data[0])
+        console.log(res)
+        this.data = res;
         this.dtTrigger.next;
       });
-    // Probar Respuesta
-    // this.http.get('https://dummy.restapiexample.com/api/v1/employees').subscribe(
-    //   console.log
-    // );
+  }
+
+  createContact(form: NgForm){
+    console.log(this.contact);
+    console.log(form);
+    this.contactService.createUser(this.contact)
+    .subscribe({
+      next: (response) => console.log(response),
+      error: (e) => this.messageService.error(),
+      complete: () =>this.messageService.success()
+  });
+  }
+
+  deleteContact(form: NgForm){
+    console.log(this.contact);
+    console.log(form);
+    this.contactService.deleteContact(this.contact)
+    .subscribe({
+      next: (response) => console.log(response),
+      error: (e) => this.messageService.error(),
+      complete: () =>this.messageService.success()
+  });
   }
 
 }

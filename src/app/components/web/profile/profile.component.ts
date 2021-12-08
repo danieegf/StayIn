@@ -12,10 +12,11 @@ export class ProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.user= new User();
+    
   }
 
   updateUser(form:NgForm){
+    this.user= new User();
     this.user.p_Nombre=this.user.p_Nombre;
     this.user.s_Nombre=this.user.s_Nombre;
     this.user.apellido_Materno=this.user.apellido_Materno;

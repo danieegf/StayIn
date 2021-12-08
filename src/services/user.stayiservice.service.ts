@@ -29,16 +29,6 @@ export class UserStayiserviceService {
   createUser(user: User): Observable<User> {
     console.log(JSON.stringify(user));
 
-    console.log(
-      JSON.stringify({
-        "id_Contacto": 4,
-        "alias": "string",
-        "telefono": 888,
-        "email": "string",
-        "id": 1
-      })
-    );
-
     return (
       this.httpClient
         .post<User>(
@@ -69,17 +59,6 @@ export class UserStayiserviceService {
   private handleError(err: HttpErrorResponse): Observable<never> {
     // just a test ... more could would go here
     console.log(err.message);
-    Swal.fire({
-      title: 'Ha ocurrido un error :(',
-      text: err.message,
-      confirmButtonText: 'Aceptar',
-      position: 'bottom',
-      confirmButtonColor: '#30313a',
-      imageUrl: 'assets/images/error.png',
-      imageWidth: 100,
-      imageHeight: 100,
-      imageAlt: 'Custom image',
-    });
     return throwError(() => err);
   }
 }
