@@ -64,52 +64,18 @@
   </div>
   <div>
     <label for="email" class="texto">Email </label>
-
-    <div>
-        <label for="nombre" class="texto">Primer Nombre</label>
-        <input [(ngModel)]="user.p_Nombre" type="text" name="nombre" placeholder="Primer Nombre" class="form-control" />
-    </div>
-    <div>
-        <label for="nombre" class="texto">Segundo Nombre</label>
-        <input [(ngModel)]="user.s_Nombre" type="text" name="nombre" placeholder="Segundo Nombre" class="form-control" />
-    </div>
-    <div>
-        <label for="nombre" class="texto"> Primer Apellido</label>
-        <input [(ngModel)]="user.apellido_Paterno" type="text" name="nombre" placeholder="Primer Apellido" class="form-control" />
-    </div>
-    <div>
-        <label for="nombre" class="texto"> Segundo Apellido</label>
-        <input [(ngModel)]="user.apellido_Materno" type="text" name="nombre" placeholder="Segundo Apellido" class="form-control" />
-    </div>
-    <div>
-        <label class="texto" for="start texto">Fecha de Nacimiento:</label>
-        <br />
-        <input [(ngModel)]="user.fecha_Nacimiento" type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
-    </div>
-    <div>
-        <label for="email" class="texto">email </label>
-
-        <input [(ngModel)]="user.email" type="text" name="email" placeholder="email" class="form-control" />
-
-        <span></span>
-    </div>
-    <div>
-        <label for="email" class="texto">Teléfono</label>
-
-        <input [(ngModel)]="user.telefono" type="text" name="email" placeholder="Teléfono" class="form-control" />
-
-    <span></span>
-  </div>
+    <input
+    [(ngModel)]="user.email"
+    type="text"
+      name="nombre"
+      placeholder="Email"
+      class="form-control"
+  />
   <div>
     <label for="email" class="texto">Teléfono</label>
 
-        <input [(ngModel)]="user.pass" type="password" name="pass" placeholder="Password" class="form-control" />
+        <input [(ngModel)]="user.telefono" name="pass" placeholder="Password" class="form-control" />
     </div>
-    <div>
-        <button class="btn btn-pink w-100">Editar</button>
-        <button (click)="updateUser(ProfileForm)" class="btn btn-pink w-100">Guardar Cambios</button>
-    </div>
-
     <span></span>
   </div>
   <div data-validate="Password is required">
