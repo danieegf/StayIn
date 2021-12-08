@@ -1,5 +1,6 @@
 
 body {
+<<<<<<< HEAD
     padding-top: 3rem;
     padding-bottom: 3rem;
     color: #5a5a5a;
@@ -60,23 +61,88 @@ body {
   
   @media (min-width: 40em) {
     /* Bump up size of carousel content */
+=======
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+>>>>>>> main
 .carousel-caption p {
-      margin-bottom: 1.25rem;
-      font-size: 1.25rem;
-      line-height: 1.4;
-    }
-  
-.featurette-heading {
-      font-size: 50px;
-    }
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
   }
-  
-  @media (min-width: 62em) {
+
 .featurette-heading {
-      margin-top: 7rem;
-    }
+    font-size: 50px;
   }
+}
+
+@media (min-width: 62em) {
+.featurette-heading {
+    margin-top: 7rem;
+  }
+}
 .imgg{
+<<<<<<< HEAD
     object-fit: cover;
     opacity: .4;
   }
@@ -87,25 +153,48 @@ body {
     margin: 20px auto;
     
     /* margin-bottom: 10px; */}
+=======
+  object-fit: cover;
+  opacity: .4;
+}
+
+.btn-pink{
+  background-color:#fdebea ;
+  border-radius: 2rem;
+  margin: 35px auto;
+  
+  /* margin-bottom: 10px; */}
+>>>>>>> main
 .btn-pink:hover{
-      
-        background-color: #30313a;
-        color: white;
-    }
+    
+      background-color: #30313a;
+      color: white;
+  }
 .texto{
+<<<<<<< HEAD
         color: black;
       
         font-family: 'Sanchez', serif;
         text-transform: uppercase;
         
         }
+=======
+      color: white;
+      margin-top: 15px;
+      font-family:monospace;
+      font-size: 20px;
+     
+      
+      }
+>>>>>>> main
 .txt-title{
-            color: black;
-            margin: 5px;
-            font-family: 'Poiret One', cursive;
-            font-size: medium;
-        }
+          color: black;
+          margin: 5px;
+          font-family: 'Poiret One', cursive;
+          font-size: 20px;
+      }
 .txt{
+<<<<<<< HEAD
             color: #f5b6be;
         }
 
@@ -126,3 +215,20 @@ body {
         text-align: center;
       
       }
+=======
+          color: #f5b6be;
+      }
+.title{
+        color: white;
+        font-family: 'Lobster Two', cursive;
+        font-size: 35px;
+        background-color: #f5b6be;
+        padding: 20px;
+        
+        
+      }
+.second-card{
+        margin-top: 20px;
+      }
+      
+>>>>>>> main

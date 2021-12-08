@@ -12,17 +12,18 @@ export class ProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.user= new User();
+    
   }
 
   updateUser(form:NgForm){
-    this.user.P_Nombre=this.user.P_Nombre;
-    this.user.S_Nombre=this.user.S_Nombre;
-    this.user.Apellido_Materno=this.user.Apellido_Materno;
-    this.user.Apellido_Paterno=this.user.Apellido_Paterno;
-    this.user.Fecha_Nacimiento=this.user.Fecha_Nacimiento;
-    this.user.Email=this.user.Email;
-    this.user.Pass=this.user.Pass;
+    this.user= new User();
+    this.user.p_Nombre=this.user.p_Nombre;
+    this.user.s_Nombre=this.user.s_Nombre;
+    this.user.apellido_Materno=this.user.apellido_Materno;
+    this.user.apellido_Paterno=this.user.apellido_Paterno;
+    this.user.fecha_Nacimiento=this.user.fecha_Nacimiento;
+    this.user.email=this.user.email;
+    this.user.pass=this.user.pass;
     console.log(this.user)
     console.log(form)
   }
