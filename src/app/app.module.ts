@@ -17,6 +17,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
 import { MapsComponent } from './components/web/maps/maps.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     DataTablesModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    AlifeFileToBase64Module
   ],
 //Inyección de Dependencias
   providers: [],

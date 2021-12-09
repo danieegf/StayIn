@@ -1,73 +1,125 @@
 <div>
+  <div>
     <div>
-        <div>
-            <div>
-                <form #SignupForm="ngForm" class="form-signin">
-                    <span class="title"> Crear nueva cuenta </span>
-                    <div class="size">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-person-circle size" viewBox="0 0 16 16">
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-            <path
-              fill-rule="evenodd"
-              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+      <div>
+        <form #SignupForm="ngForm" class="form-signin">
+          <div class="form-signin center">
+            <img [src]="imageSrc" style="width: 200px" alt="No ha selecionado Foto de Perfil" />
+            <input
+              name="imageUrl"
+              type="file"
+              accept="image/*"
+              (change)="handleInputChange($event)"
             />
-          </svg>
-                    </div>
-                    <div>
-                        <label for="nombre" class="texto">Primer Nombre</label>
-                        <input [(ngModel)]="user.p_Nombre" type="text" name="nombre" placeholder="Primer Nombre" class="form-control" />
-                    </div>
-                    <div>
-                        <label for="nombre" class="texto">Segundo Nombre</label>
-                        <input [(ngModel)]="user.s_Nombre" type="text" name="nombre" placeholder="Segundo Nombre" class="form-control" />
-                    </div>
-                    <div>
-                        <label for="nombre" class="texto"> Primer Apellido</label>
-                        <input [(ngModel)]="user.apellido_Paterno" type="text" name="nombre" placeholder="Primer Apellido" class="form-control" />
-                    </div>
-                    <div>
-                        <label for="nombre" class="texto"> Segundo Apellido</label>
-                        <input [(ngModel)]="user.apellido_Materno" type="text" name="nombre" placeholder="Segundo Apellido" class="form-control" />
-                    </div>
-                    <div>
-                        <label class="texto" for="start texto">Fecha de Nacimiento:</label>
-                        <br />
-                        <input [(ngModel)]="user.fecha_Nacimiento" type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
-                    </div>
-                    <div>
-                        <label for="email" class="texto">email </label>
+          </div>
+          <div>
+            <label for="nombre" class="texto">Primer Nombre</label>
+            <input
+              [(ngModel)]="user.p_Nombre"
+              type="text"
+              name="nombre"
+              placeholder="Primer Nombre"
+              class="form-control"
+            />
+          </div>
+          <div>
+            <label for="nombre" class="texto">Segundo Nombre</label>
+            <input
+              [(ngModel)]="user.s_Nombre"
+              type="text"
+              name="nombre"
+              placeholder="Segundo Nombre"
+              class="form-control"
+            />
+          </div>
+          <div>
+            <label for="nombre" class="texto"> Primer Apellido</label>
+            <input
+              [(ngModel)]="user.apellido_Paterno"
+              type="text"
+              name="nombre"
+              placeholder="Primer Apellido"
+              class="form-control"
+            />
+          </div>
+          <div>
+            <label for="nombre" class="texto"> Segundo Apellido</label>
+            <input
+              [(ngModel)]="user.apellido_Materno"
+              type="text"
+              name="nombre"
+              placeholder="Segundo Apellido"
+              class="form-control"
+            />
+          </div>
+          <div>
+            <label class="texto" for="start texto">Fecha de Nacimiento:</label>
+            <br />
+            <input
+              [(ngModel)]="user.fecha_Nacimiento"
+              type="date"
+              id="start"
+              name="trip-start"
+              value="2018-07-22"
+              min="2018-01-01"
+              max="2018-12-31"
+            />
+          </div>
+          <div>
+            <label for="email" class="texto">email </label>
 
-                        <input [(ngModel)]="user.email" type="text" name="email" placeholder="email" class="form-control" />
+            <input
+              [(ngModel)]="user.email"
+              type="text"
+              name="email"
+              placeholder="email"
+              class="form-control"
+            />
 
-                        <span></span>
-                    </div>
-                    <div>
-                        <label for="email" class="texto">Teléfono</label>
+            <span></span>
+          </div>
+          <div>
+            <label for="email" class="texto">Teléfono</label>
 
-                        <input [(ngModel)]="user.telefono" type="text" name="email" placeholder="Teléfono" class="form-control" />
+            <input
+              [(ngModel)]="user.telefono"
+              type="text"
+              name="email"
+              placeholder="Teléfono"
+              class="form-control"
+            />
 
-                        <span></span>
-                    </div>
-                    <div data-validate="Password is required">
-                        <label class="texto">Password </label>
+            <span></span>
+          </div>
+          <div data-validate="Password is required">
+            <label class="texto">Password </label>
 
-                        <input [(ngModel)]="user.pass" type="password" name="pass" placeholder="Password" class="form-control" />
-                    </div>
-                    <div>
-                        <button (click)="createUser(SignupForm)" class="btn btn-pink w-100">Crear</button>
-                    </div>
-                    <div>
-                        <input id="ckb1" type="checkbox" name="remember-me" />
-                        <label for="ckb1" class="checkbox"> Recordar mi usuario </label>
-                    </div>
-                    <div>
-                        <div>
-                            <a routerLink="/login" class="txt-usuario">
-                            ¿Ya tienes cuenta? / <b>Ingresar</b>
-                    </a>
-                        </div>
-                    </div>
-                </form>
+            <input
+              [(ngModel)]="user.pass"
+              type="password"
+              name="pass"
+              placeholder="Password"
+              class="form-control"
+            />
+          </div>
+          <div>
+            <button (click)="createUser(SignupForm)" class="btn btn-pink w-100">
+              Crear
+            </button>
+          </div>
+          <div>
+            <input id="ckb1" type="checkbox" name="remember-me" />
+            <label for="ckb1" class="checkbox"> Recordar mi usuario </label>
+          </div>
+          <div>
+            <div>
+              <a routerLink="/login" class="txt-usuario">
+                ¿Ya tienes cuenta? / <b>Ingresar</b>
+              </a>
             </div>
-        </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+</div>
