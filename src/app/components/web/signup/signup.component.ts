@@ -28,6 +28,8 @@ export class SignupComponent implements OnInit {
 
   createUser(form: NgForm): void  {
     console.log(this.user);
+    this.user.imagen=this.imageSrc
+    console.log(this.user);
     console.log(form);
     this.userService.createUser(this.user)
     .subscribe({
@@ -35,14 +37,12 @@ export class SignupComponent implements OnInit {
       error: (e) => this.messageService.error(),
       complete: () =>this.messageService.success()
   });
-
   }
 
   onFileChanged(event:any) {
     console.log('Imagen Cambiada')
     const file = event.target.files[0]
     console.log(typeof(file));
-    
     console.log(file)
   }
 

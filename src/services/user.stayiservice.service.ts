@@ -9,7 +9,7 @@ import { User } from 'src/app/models/user.model';
 import Swal from 'sweetalert2';
 
 const baseURL ='https://stayinsafe-api.azurewebsites.net';
-
+const loginBaseURL = 'https://stayinsafe-login.azurewebsites.net'
 @Injectable({
   providedIn: 'root',
 })
@@ -31,14 +31,8 @@ export class UserStayiserviceService {
     return (
       this.httpClient
         .post<User>(
-          baseURL + '/api/Contactos/AddContact',
-         JSON.stringify({
-          "id_Contacto": 5166,
-          "alias": "Roberto Mejia",
-          "telefono": 4776921217,
-          "email": "string",
-          "id": 1
-        }),
+          baseURL + '/api/User/Register',
+         JSON.stringify(user),
           this.httpOptions
         )
         .pipe(retry(1), catchError(this.handleError))
@@ -48,7 +42,7 @@ export class UserStayiserviceService {
   login(user: User): Observable<User> {
     console.log(JSON.stringify(user));
     return this.httpClient.post<User>(
-      baseURL + '/api/User/Register',
+      loginBaseURL + '/Login',
       JSON.stringify(user),
       this.httpOptions
     );
