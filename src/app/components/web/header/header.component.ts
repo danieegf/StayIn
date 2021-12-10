@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { NavbarService } from 'src/services/navBarService';
 
@@ -11,13 +11,19 @@ import { NavbarService } from 'src/services/navBarService';
 export class HeaderComponent implements OnInit {
 
 
-  constructor( public nav: NavbarService ) {
+  constructor( public nav: NavbarService,private router: Router) {
   }
 
 
   ngOnInit(): void {
     
 
+  }
+
+  logout(){
+    this.nav.hide()
+    localStorage.clear();
+    this.router.navigateByUrl('/login');
   }
 
 }

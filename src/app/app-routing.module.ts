@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from 'src/services/auth.guard';
 import { ContactsComponent } from './components/web/contacts/contacts.component';
 import { ForgotpasswordComponent } from './components/web/forgotpassword/forgotpassword.component';
 import { HomeComponent } from './components/web/home/home.component';
@@ -34,20 +35,22 @@ const routes: Routes = [
 },
 {
   path: 'contacts',
-  component: ContactsComponent
+  component: ContactsComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'profile',
-  component: ProfileComponent
+  component: ProfileComponent,
+  canActivate: [AuthGuard]
 },
 {
   path: 'maps',
   component: MapsComponent,
-  // canActivate: [CommentGuard]
+  canActivate: [AuthGuard]
 },
 {
   path: '**',
-  redirectTo:'signup'
+  redirectTo:'login'
 }
 ];
 

@@ -45,6 +45,7 @@
                         </li>
                     </ul>
                     <form class="d-flex">
+                      <button class="btn-pink" *ngIf="nav.visible" (click)="logout()" routerLink="/login" type="submit">Cerrar Sesión</button>
                         <button class="btn-pink" *ngIf="!nav.visible" routerLink="/login" type="submit">Iniciar Sesión</button>
                         <button class="btn-pink" *ngIf="!nav.visible" routerLink="/signup" type="submit">Registrate Ahora!</button>
                     </form>

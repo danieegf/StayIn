@@ -34,7 +34,8 @@ export class TokenServiceService {
     localStorage.setItem('UserId', decoded.UserId);
     localStorage.setItem('UserName', decoded.UserId);
     console.log(localStorage['jwt'])
-    localStorage.setItem('expiration', decoded.exp);    
+    localStorage.setItem('expiration', decoded.exp);
+    localStorage.setItem('auth','true');    
     return true
   }
 }
