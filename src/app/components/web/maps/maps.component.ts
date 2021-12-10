@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
 import { SiteStayiserviceService } from 'src/services/site.stayiservice.service';
 import { MessageStayiserviceService } from 'src/services/message.stayiservice.service';
 import { Comments } from 'src/app/models/comment.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 interface Propiedad {
   titulo: string;
@@ -23,6 +23,13 @@ interface Propiedad {
 
 
 export class MapsComponent implements OnInit, AfterViewInit {
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': `Bearer ${localStorage['jwt']}`
+      })
+    };
   site!: Site;
   comment!: Comments;
   lstcomments!:Comments[]
@@ -38,11 +45,17 @@ export class MapsComponent implements OnInit, AfterViewInit {
 
 
   ngOnInit(): void {
-    this.http.get('https://stayinsafe-api.azurewebsites.net/api/Comentarios/GetComments/1').
-    subscribe((res: any) => {
-      console.log(res)
-      this.lstcomments = res;
+    this.http.get('https://stayinsafe-api.azurewebsites.net/api/Comentarios/GetComments/1',this.httpOptions).
+    subscribe({
+      next: (response : any) => this.lstcomments = response,
+      error: (e) => this.messageService.error(),
+      complete: () => this.messageService.success(),
     });
+    
+    // ((res: any) => {
+    //   console.log(res)
+    //   this.lstcomments = res;
+    // });
     this.site= new Site();
 
     this.map = new mapboxgl.Map({
