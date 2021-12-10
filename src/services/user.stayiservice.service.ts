@@ -35,6 +35,18 @@ export class UserStayiserviceService {
     );
   }
 
+  updateUser(user: User): Observable<User> {
+    console.log(JSON.stringify(user));
+    return (
+      this.httpClient
+        .post<User>(
+          baseURL + '/api/User/Update',
+         JSON.stringify(user),
+          this.httpOptions
+        )
+        .pipe(retry(1), catchError(this.handleError))
+    );
+  }
   login(user: User): Observable<User> {
     console.log(JSON.stringify(user));
     return this.httpClient.post<User>(

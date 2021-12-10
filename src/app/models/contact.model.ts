@@ -3,5 +3,5 @@ export class Contact {
     alias?:string;
     telefono?:string;
     email?:Number;
-    id?:Date;
+    id?:Number;
 }

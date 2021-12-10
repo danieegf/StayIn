@@ -4,9 +4,10 @@ export class User {
     s_Nombre?:string;
     apellido_Paterno?:string;
     apellido_Materno?:string;
-    fecha_Nacimiento?:Date;
+    fecha_Nacimiento?:any;
     email?:string;
     telefono?:string;
     pass?:string;
     imagen?:string;
+    date?:string
 }

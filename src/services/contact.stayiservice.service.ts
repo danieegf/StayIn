@@ -16,17 +16,15 @@ const baseURL = 'https://stayinsafe-api.azurewebsites.net';
 export class ContactStayiserviceService {
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Content-Type',
-      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'
-    }),
-  };
+      'Content-Type':  'application/json',
+      'Authorization': `Bearer ${localStorage['jwt']}`
+      })
+    };
 
 
   constructor(private httpClient: HttpClient) {}
 
-  createUser(contact: Contact): Observable<Contact> {
+  createContact(contact: Contact): Observable<Contact> {
     console.log(JSON.stringify(contact));
     return (
       this.httpClient

@@ -26,6 +26,7 @@
       name="nombre"
       placeholder="Primer Nombre"
       class="form-control"
+      [readonly]="isReadonly"
     />
   </div>
   <div>
@@ -36,6 +37,7 @@
       name="nombre"
       placeholder="Segundo Nombre"
       class="form-control"
+      [readonly]="isReadonly"
     />
   </div>
   <div>
@@ -46,6 +48,7 @@
       name="nombre"
       placeholder="Primer Apellido"
       class="form-control"
+      [readonly]="isReadonly"
     />
   </div>
   <div>
@@ -56,6 +59,7 @@
       name="nombre"
       placeholder="Segundo Apellido"
       class="form-control"
+      [readonly]="isReadonly"
     />
   </div>
   <div>
@@ -63,11 +67,12 @@
     <br />
     <input ng-controller="datCtrl"
       [(ngModel)]="user.fecha_Nacimiento "
-      type="date"
+      
       id="start"
       name="trip-start"
       min="1900-01-01"
       max="2018-12-31"
+      [readonly]="isReadonly"
     />
   </div>
   <div>
@@ -78,11 +83,12 @@
       name="nombre"
       placeholder="Email"
       class="form-control"
+      [readonly]="isReadonly"
   />
   <div>
     <label for="email" class="texto">Teléfono</label>
 
-        <input [(ngModel)]="user.telefono" name="pass" placeholder="Telefono" class="form-control" />
+        <input [(ngModel)]="user.telefono" name="pass" placeholder="Telefono" class="form-control" [readonly]="isReadonly" />
     </div>
     <span></span>
   </div>
@@ -98,8 +104,8 @@
     />
   </div> -->
   <div>
-    <button class="btn btn-pink w-100">Editar</button>
-    <button (click)="updateUser(ProfileForm)" class="btn btn-pink w-100">
+    <button class="btn btn-pink w-100" (click)="editar()" *ngIf="isReadonly">Editar</button>
+    <button (click)="updateUser(ProfileForm)" (click)="updateUser(ProfileForm)"  *ngIf="!isReadonly" class="btn btn-pink w-100">
       Guardar Cambios
     </button>
   </div>

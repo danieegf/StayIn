@@ -37,7 +37,7 @@ export class ContactsComponent implements OnInit, OnDestroy {
     this.contact = new Contact();
     this.http
       .get(
-        'https://stayinsafe-api.azurewebsites.net/api/Contactos/GetContacts/1',
+        'https://stayinsafe-api.azurewebsites.net/api/Contactos/GetContacts/'+localStorage.getItem('UserId'),
         this.httpOptions
       )
       .subscribe({
@@ -50,8 +50,9 @@ export class ContactsComponent implements OnInit, OnDestroy {
 
   createContact(form: NgForm) {
     console.log(this.contact);
+    this.contact.id=Number(localStorage.getItem('UserId'))
     console.log(form);
-    this.contactService.createUser(this.contact).subscribe({
+    this.contactService.createContact(this.contact).subscribe({
       next: (response) => console.log(response),
       error: (e) => this.messageService.error(),
       complete: () => this.messageService.success(),
