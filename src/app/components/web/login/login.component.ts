@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 import { MessageStayiserviceService } from 'src/services/message.stayiservice.service';
+import { TokenServiceService } from 'src/services/token.service.service';
 import { UserStayiserviceService } from 'src/services/user.stayiservice.service';
 
 @Component({
@@ -11,7 +12,8 @@ import { UserStayiserviceService } from 'src/services/user.stayiservice.service'
 })
 export class LoginComponent implements OnInit {
   user!: User;
-  constructor(private userService: UserStayiserviceService,private messageService:MessageStayiserviceService) { }
+  
+  constructor(private tokenServiceService: TokenServiceService,private userService: UserStayiserviceService,private messageService:MessageStayiserviceService) { }
 
   ngOnInit(): void {
     //Inicializar usuario
@@ -20,11 +22,11 @@ export class LoginComponent implements OnInit {
 
 
   login(form: NgForm) {
-    // this.user.pass=this.user.email!+this.user.pass!;
     console.log(this.user);
     console.log(form);
     this.userService.login(this.user).subscribe({
-      next: (response) => console.log(response),
+      next: (response) =>       
+      this.tokenServiceService.loginSetToken(response),
       error: (e) => this.messageService.error(),
       complete: () => this.messageService.success(),
     });

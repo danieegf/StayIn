@@ -22,6 +22,8 @@ export class ContactStayiserviceService {
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'
     }),
   };
+
+
   constructor(private httpClient: HttpClient) {}
 
   createUser(contact: Contact): Observable<Contact> {

@@ -14,7 +14,8 @@ export class CommentStayiserviceService {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
        'Access-Control-Allow-Headers': 'Content-Type',
-       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'
+       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+       'Authorization': 'my-auth-token'
     }),
   };
   constructor(private httpClient: HttpClient) { }
