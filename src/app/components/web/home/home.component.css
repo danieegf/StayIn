@@ -82,6 +82,13 @@ body {
   object-fit: cover;
   opacity: .4;
 }
+.m{
+  margin-top: -40px;
+}
+.im{
+  margin-left: 10px;
+  
+}
 
 .btn-pink{
   background-color:#fdebea ;
@@ -111,12 +118,12 @@ body {
 .txt{
           color: #f5b6be;
       }
-.title{
-        color: white;
-        font-family: 'Lobster Two', cursive;
-        font-size: 35px;
-        background-color: #f5b6be;
-        padding: 20px;
+.tittle{
+        margin-top: 20px;
+    font-family: 'Poiret One', cursive;
+        font-size: 25px;
+        
+        padding: 5px;
         
         
       }
