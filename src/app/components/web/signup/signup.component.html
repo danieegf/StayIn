@@ -1,11 +1,24 @@
 <div>
   <div>
+    <div class="form-signin center">
+      <img
+        src="https://i.pinimg.com/originals/69/26/dc/6926dc79ee3d02fb64f4cc04381c65d8.jpg"
+        alt="Avatar"
+        style="width: 200px"
+      />
+    </div>
     <div>
       <div>
         <form #SignupForm="ngForm" class="form-signin">
           <div class="form-signin center">
-            <img [src]="imageSrc" style="width: 200px" alt="No ha selecionado Foto de Perfil" />
+            <img
+              [src]="imageSrc"
+              style="width: 200px"
+              class="note"
+              alt="No ha selecionado Foto de Perfil"
+            />
             <input
+              align="center"
               name="imageUrl"
               type="file"
               accept="image/*"
