@@ -1,7 +1,12 @@
-<h2 class="title">Ver Lugares</h2>
+<div class="t">
+  <h2 class="title">Ver Lugares</h2>
+</div>
+
 <div id="map"></div>
 
 <div class="container">
+
+
   <ul class="list-group" class="container">
     <li
       class="list-group-item list-group-item-info btn-add"
@@ -12,6 +17,9 @@
       +Agregar Lugar
     </li>
   </ul>
+
+
+
   <div id="collapseExample" [ngbCollapse]="isCollapsedSiteForm">
     <form #SiteForm="ngForm" class="form-signin">
       <div>
@@ -61,7 +69,10 @@
         <button (click)="createSite(SiteForm)" class="btn btn-pink w-100">
           Guardar Cambios
         </button>
-        <button class="btn btn-pink w-100" (click)="isCollapsedSiteForm = !isCollapsedSiteForm">
+        <button
+          class="btn btn-pink w-100"
+          (click)="isCollapsedSiteForm = !isCollapsedSiteForm"
+        >
           Cancelar
         </button>
       </div>
@@ -72,76 +83,84 @@
     <ul class="list-group" class="container">
       <li
       class="align-self-end list-group-item list-group-item-info btn-add"
-        (click)="isCollapsedCommentForm = !isCollapsedCommentForm"
-        [attr.aria-expanded]="!isCollapsedCommentForm"
-        aria-controls="collapseExample"
-      >
-        +Agregar Comentario
-      </li>
+      (click)="isCollapsedCommentForm = !isCollapsedCommentForm"
+      [attr.aria-expanded]="!isCollapsedCommentForm"
+      aria-controls="collapseExample"
+    >
+      +Agregar Comentario
+    </li>
     </ul>
-    <div id="collapseExample" class="container" [ngbCollapse]="isCollapsedCommentForm">
-      <form #SiteForm="ngForm" class="form-signin">
-        <div>
-          <label for="nombre" class="texto">Título de Comentario</label>
-          <input
-            [(ngModel)]="site.nombre"
-            type="text"
-            name="nombre"
-            placeholder="Nombre del Sitio"
-            class="form-control"
-          />
-        </div>
-        <div data-validate="Comments is required">
-          <label class="texto" for="text">Comentarios</label>
-          <textarea
-            class="form-control form-floating"
-            rows="5"
-            id="comments"
-            placeholder="Comentarios"
-            name="text"
-          ></textarea>
-        </div>
-        <div>
-          <button (click)="agregar_lugar(SiteForm)" class="btn btn-pink w-100">
-            Guardar Cometario
-          </button>
-          <button
-            class="btn btn-pink w-100"
-            (click)="isCollapsedCommentForm = !isCollapsedCommentForm"
-          >
-            Cancelar
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
 
-  <div class="album py-5 bg-light" *ngFor="let comment of lstcomments">
-    <div class="container">
-      <div class="star-widget">
-        <input type="radio" name="rate" id="rate-5" />
-        <label for="rate-5" class="fas fa-star bi-star-fill"></label>
-        <input type="radio" name="rate" id="rate-4" />
-        <label for="rate-4" class="fas fa-star bi-star-fill"></label>
-        <input type="radio" name="rate" id="rate-3" />
-        <label for="rate-3" class="fas bi-star-fill"></label>
-        <input type="radio" name="rate" id="rate-2" />
-        <label for="rate-2" class="fas fa-star bi-star-fill"></label>
-        <input type="radio" name="rate" id="rate-1" />
-        <label for="rate-1" class="fas fa-star bi-star-fill"></label>
+
+
+
+    <div
+    id="collapseExample"
+    class="container"
+    [ngbCollapse]="isCollapsedCommentForm"
+  >
+    <form #SiteForm="ngForm" class="form-signin">
+      <div>
+        <label for="nombre" class="texto">Título de Comentario</label>
+        <input
+          [(ngModel)]="site.nombre"
+          type="text"
+          name="nombre"
+          placeholder="Nombre del Sitio"
+          class="form-control"
+        />
       </div>
-      <div class="col-md-4" (click)="ir_a_marcador()">
-        <div class="card mb-4 shadow-sm">
-          <div class="card-body">
-            <p class="card-text">{{ comment.comentario }}</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <div class="text">{{ comment.descripcion }}</div>
-              </div>
-              <small class="text-muted">12/12/2021</small>
+      <div data-validate="Comments is required">
+        <label class="texto" for="text">Comentarios</label>
+        <textarea
+          class="form-control form-floating"
+          rows="5"
+          id="comments"
+          placeholder="Comentarios"
+          name="text"
+        ></textarea>
+      </div>
+      <div>
+        <button (click)="agregar_lugar(SiteForm)" class="btn btn-pink w-100">
+          Guardar Cometario
+        </button>
+        <button
+          class="btn btn-pink w-100"
+          (click)="isCollapsedCommentForm = !isCollapsedCommentForm"
+        >
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="album py-5 bg-light" *ngFor="let comment of lstcomments">
+  <div class="container">
+    <div class="star-widget">
+      <input type="radio" name="rate" id="rate-5" />
+      <label for="rate-5" class="fas fa-star bi-star-fill"></label>
+      <input type="radio" name="rate" id="rate-4" />
+      <label for="rate-4" class="fas fa-star bi-star-fill"></label>
+      <input type="radio" name="rate" id="rate-3" />
+      <label for="rate-3" class="fas bi-star-fill"></label>
+      <input type="radio" name="rate" id="rate-2" />
+      <label for="rate-2" class="fas fa-star bi-star-fill"></label>
+      <input type="radio" name="rate" id="rate-1" />
+      <label for="rate-1" class="fas fa-star bi-star-fill"></label>
+    </div>
+    <div class="col-md-4" (click)="ir_a_marcador()">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <p class="card-text">{{ comment.comentario }}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <div class="text">{{ comment.descripcion }}</div>
             </div>
+            <small class="text-muted">12/12/2021</small>
           </div>
         </div>
       </div>
-
-  
+    </div>
+  </div>
+</div>
