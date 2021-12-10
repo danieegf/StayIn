@@ -35,7 +35,9 @@ export class SignupComponent implements OnInit {
     .subscribe({
       next: (response) => console.log(response),
       error: (e) => this.messageService.error(),
-      complete: () =>this.messageService.success()
+      complete: () =>{this.messageService.success()
+        this.router.navigate(['./profile'])
+      }
   });
   }
 

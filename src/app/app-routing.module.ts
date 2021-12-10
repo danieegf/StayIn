@@ -42,7 +42,8 @@ const routes: Routes = [
 },
 {
   path: 'maps',
-  component: MapsComponent
+  component: MapsComponent,
+  // canActivate: [CommentGuard]
 },
 {
   path: '**',

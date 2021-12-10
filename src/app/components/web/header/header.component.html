@@ -4,17 +4,17 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div    class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="/maps">Lugares</a
+                    <a class="nav-link active" *ngIf="nav.visible" aria-current="page" routerLink="/maps">Lugares</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/profile">Perfil</a>
+          <a class="nav-link active" *ngIf="nav.visible" routerLink="/profile">Perfil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" routerLink="/contacts">Mis Contactos</a>
+                    <a class="nav-link active" *ngIf="nav.visible" routerLink="/contacts">Mis Contactos</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,8 +45,8 @@
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <button class="btn-pink" routerLink="/login" type="submit">Iniciar Sesión</button>
-                        <button class="btn-pink" routerLink="/signup" type="submit">Registrate Ahora!</button>
+                        <button class="btn-pink" *ngIf="!nav.visible" routerLink="/login" type="submit">Iniciar Sesión</button>
+                        <button class="btn-pink" *ngIf="!nav.visible" routerLink="/signup" type="submit">Registrate Ahora!</button>
                     </form>
 
         </div>

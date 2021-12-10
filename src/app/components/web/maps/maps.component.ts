@@ -8,6 +8,9 @@ import { SiteStayiserviceService } from 'src/services/site.stayiservice.service'
 import { MessageStayiserviceService } from 'src/services/message.stayiservice.service';
 import { Comments } from 'src/app/models/comment.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { NavbarService } from 'src/services/navBarService';
 
 interface Propiedad {
   titulo: string;
@@ -43,6 +46,9 @@ export class MapsComponent implements OnInit, AfterViewInit {
   closeResult = '';
   constructor(private http: HttpClient,private siteService: SiteStayiserviceService,private messageService:MessageStayiserviceService) { }
 
+  
+
+
 
   ngOnInit(): void {
     this.http.get('https://stayinsafe-api.azurewebsites.net/api/Comentarios/GetComments/1',this.httpOptions).
@@ -52,10 +58,7 @@ export class MapsComponent implements OnInit, AfterViewInit {
       complete: () => this.messageService.success(),
     });
     
-    // ((res: any) => {
-    //   console.log(res)
-    //   this.lstcomments = res;
-    // });
+
     this.site= new Site();
 
     this.map = new mapboxgl.Map({
@@ -91,13 +94,7 @@ export class MapsComponent implements OnInit, AfterViewInit {
 
   }
 
-  random_lat() {
-    return Math.floor((Math.random() * (90 - (-90) + 1)) + (-90));
-  }
 
-  random_lng() {
-    return Math.floor((Math.random() * (180 - (-180) + 1)) + (-180));
-  }
 
 
   ir_a_marcador() {
@@ -115,8 +112,7 @@ export class MapsComponent implements OnInit, AfterViewInit {
       'Construction on the Washington Monument began in 1848.'
       );
     let marcador = new mapboxgl.Marker(markerHtml,{draggable:true})
-    this.lng=this.random_lng()
-    this.lat=this.random_lat()
+
     marcador.setLngLat(this.map.getCenter())
     marcador.addTo(this.map)
     marcador.setPopup(popup)

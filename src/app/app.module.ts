@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MapsComponent } from './components/web/maps/maps.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+import { NavbarService } from 'src/services/navBarService';
+
 
 
 @NgModule({
@@ -46,7 +48,7 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     AlifeFileToBase64Module
   ],
 //Inyección de Dependencias
-  providers: [],
+  providers: [NavbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
