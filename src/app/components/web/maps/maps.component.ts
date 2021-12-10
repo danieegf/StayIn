@@ -55,7 +55,7 @@ export class MapsComponent implements OnInit, AfterViewInit {
     subscribe({
       next: (response : any) => this.lstcomments = response,
       error: (e) => this.messageService.error(),
-      complete: () => this.messageService.success(),
+      complete: () => {},
     });
     
 

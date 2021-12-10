@@ -30,13 +30,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(form: NgForm) {
+    localStorage.clear();
     console.log(this.user);
     console.log(form);
     this.userService.login(this.user).subscribe({
       next: (response) => this.tokenServiceService.loginSetToken(response),
       error: (e) => this.messageService.error(),
       complete: () => {
-        this.messageService.success(),
+        // this.messageService.success(),
         localStorage.setItem('logged_in', 'true');   
         this.router.navigate(['./maps'])
         this.nav.show();

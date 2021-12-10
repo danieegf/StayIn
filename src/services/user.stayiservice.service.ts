@@ -14,18 +14,14 @@ const loginBaseURL = 'https://stayinsafe-login.azurewebsites.net'
   providedIn: 'root',
 })
 export class UserStayiserviceService {
-  // Http Options
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-       'Access-Control-Allow-Headers': 'Content-Type',
-       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT'
-    }),
-  };
+      'Content-Type':  'application/json',
+      'Authorization': `Bearer ${localStorage['jwt']}`
+      })
+    };
+  
   constructor(private httpClient: HttpClient) {}
-
-  // HttpClient API post() method => Create employee
   createUser(user: User): Observable<User> {
     console.log(JSON.stringify(user));
     return (

@@ -43,7 +43,7 @@ export class ContactsComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (response) => {this.data = response; this.dtTrigger.next},
         error: (e) => this.messageService.error(),
-        complete: () => this.messageService.success(),
+        complete: () => {},
       });
   }
 
