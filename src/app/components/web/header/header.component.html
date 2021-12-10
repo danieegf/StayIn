@@ -1,28 +1,48 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-color">
-    <div class="container-fluid">
-        <a class="navbar-brand text" href="/home">Stay In Safe</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <div class="container-fluid">
+    <a class="navbar-brand text" href="/home">Stay In Safe</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-        <div    class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" *ngIf="nav.visible" aria-current="page" routerLink="/maps">Lugares</a
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" *ngIf="nav.visible" aria-current="page" routerLink="/maps"
+            >Lugares</a
           >
         </li>
         <li class="nav-item">
           <a class="nav-link active" *ngIf="nav.visible" routerLink="/profile">Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" *ngIf="nav.visible" routerLink="/contacts">Mis Contactos</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  *ngIf="nav.visible" routerLink="/contacts">Mis Contactos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/support">Sugerencias</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link active dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Asociaciones
           </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>
-                            <a class="dropdown-item" href="http://www.fdiarq.org/">Fundación diarq IAP</a
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="http://www.fdiarq.org/"
+                >Fundación diarq IAP</a
               >
             </li>
             <li>
@@ -32,24 +52,27 @@
             </li>
             <li>
               <a class="dropdown-item" href="http://www.adivac.org/">ADIVAC</a>
-                        </li>
+            </li>
 
-                        <li>
-                            <a class="dropdown-item" href="https://www.casagaviota.org/">Casa Violeta</a
+            <li>
+              <a class="dropdown-item" href="https://www.casagaviota.org/"
+                >Casa Violeta</a
               >
             </li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/support">Sugerencias</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                      <button class="btn-pink" *ngIf="nav.visible" (click)="logout()" routerLink="/login" type="submit">Cerrar Sesión</button>
-                        <button class="btn-pink" *ngIf="!nav.visible" routerLink="/login" type="submit">Iniciar Sesión</button>
-                        <button class="btn-pink" *ngIf="!nav.visible" routerLink="/signup" type="submit">Registrate Ahora!</button>
-                    </form>
-
-        </div>
+      </ul>
+      <form class="d-flex">
+        <button class="btn-pink btn" *ngIf="nav.visible" (click)="logout()"  routerLink="/login" type="submit">
+          Cerrar Sesión
+        </button>
+        <button class="btn-pink btn" *ngIf="!nav.visible"  routerLink="/login" type="submit">
+          Iniciar Sesión
+        </button>
+        <button class="btn-pink btn" *ngIf="!nav.visible"  routerLink="/signup" type="submit">
+          ¡Registrate Ahora!
+        </button>
+      </form>
     </div>
+  </div>
 </nav>

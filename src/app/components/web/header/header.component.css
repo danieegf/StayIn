@@ -15,15 +15,19 @@
 }
 
 .btn-pink {
-    background-color: #fdebea;
+    background-color: #30313a;
+    color: white;
     border-radius: 2rem;
     margin: auto;
-    font-size: 20px;
-    color: #30313a;
-    font-family: 'Lobster Two', cursive;
+    font-size: 17px;
+    font-family: 'PT Sans', sans-serif;
+    
+    
 }
 
 .btn-pink:hover {
-    background-color: #30313a;
-    color: white;
+    background-color:#f5b6be;
+    color: black;
+    
+    
 }
